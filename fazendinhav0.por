@@ -7,18 +7,48 @@ programa
 	inteiro numeroDias = 0
 	inteiro opcao
 	inteiro dinheiro = 0
+	inteiro quantidade
+					
 
      //Animais e preços
 	inteiro vaca = 2
-     inteiro valor_vaca = 1900
+     real valor_vaca = 1900.0
      inteiro touro = 0
-     inteiro valor_touro = 15000
+     real valor_touro = 15000.0
      inteiro jegue = 0
-     inteiro valor_jegue = 0
+     real valor_jegue = 0.0
      inteiro jumenta = 0
-     inteiro valor_jumenta = 0
+     real valor_jumenta = 0.0
 
      //Alimentos e preços
+     inteiro leite = 0
+     real valor_leite = 0.0
+     inteiro carne_de_gato
+     real valor__carne_de_gato = 0.0
+     inteiro carne_de_cachorro
+     real valor__carne_de_cachorro = 0.0
+     inteiro carne_de_boi
+     real valor__carne_de_boi = 0.0
+     inteiro verduras
+     real valor_verduras = 0.0
+     inteiro frutas
+     real valor_frutas = 0.0
+     inteiro cereais
+     real valor_cereais = 0.0
+     inteiro agua
+     real valor_agua = 0.0
+     inteiro suco
+     real valor_suco = 0.0
+     //Rações
+     inteiro racao_barata
+     real valor__racao_barata = 0.0
+     inteiro racao_media 
+     real valor__racao_media = 0.0
+     inteiro racao_cara
+     real valor__racao_cara = 0.0
+
+     //Produção
+     inteiro time_leite = 0
 	
 	funcao inicio()
 	{
@@ -52,6 +82,8 @@ programa
 	funcao comercarJogo(){
 		
 		para(numeroDias = numeroDias; numeroDias <= 100; numeroDias++){
+
+			time_leite = 0
 				
 			se (numeroDias == 0 ){
 				limpa()
@@ -88,7 +120,7 @@ programa
 			leia(opcao)
 			escolha(opcao){
 				caso 1:
-					Mercado()
+					MercadoAnimais()
 				pare
 
 				caso 2: //add
@@ -101,11 +133,34 @@ programa
 	} // fim da funcao comercarJogo
 
 	funcao Mercado(){
-					inteiro quantidade
-					
 					escreva("************************************************************* \n")
 					escreva("**                                                         ** \n")
-					escreva("**             Escolha um animal para cmprar:              ** \n")
+					escreva("**              Escolha o que deseja comprar               ** \n")
+					escreva("**                                                         ** \n")
+					escreva("**                    1_ Animais                           ** \n")
+					escreva("**                                                         ** \n")
+					escreva("**                    2_ Alimento                          ** \n")
+					escreva("**                                                         ** \n")
+					escreva("**                    3_ Sementes                          ** \n")
+					escreva("**                                                         ** \n")
+					escreva("************************************************************* \n")
+					leia(opcao)
+					
+					escolha(opcao){
+						caso 1:
+							 MercadoAnimais()
+						pare
+						caso 2:
+						pare
+						caso 3:
+						pare
+					}
+	}
+
+	funcao MercadoAnimais(){
+					escreva("************************************************************* \n")
+					escreva("**                                                         ** \n")
+					escreva("**             Escolha um animal para comprar:             ** \n")
 					escreva("**                                                         ** \n")
 					escreva("**                    1_ Vaca                              ** \n")
 					escreva("**                                                         ** \n")
@@ -211,13 +266,318 @@ programa
 						pare
 							}//fim escolha compra
 				}// fim da escolha animal
-	} //fim da funcao Mercado
+	} //fim da funcao MercadoAnimais
+
+	funcao MercadoAllimento(){
+
+					escreva("************************************************************* \n")
+					escreva("**                                                         ** \n")
+					escreva("**           Escolha um alimentol para comprar:            ** \n")
+					escreva("**                                                         ** \n")
+					escreva("**                 1_ Carne de Gato                        ** \n")
+					escreva("**                                                         ** \n")
+					escreva("**                2_ Carne de Cachorro                     ** \n")
+					escreva("**                                                         ** \n")
+					escreva("**                  3_ Carne de Boi                        ** \n")
+					escreva("**                                                         ** \n")
+					escreva("**                    4_ Verduras                          ** \n")
+					escreva("**                                                         ** \n")
+					escreva("**                     5_ Frutas                           ** \n")
+					escreva("**                                                         ** \n")
+					escreva("**                     6_ Cereais                          ** \n")
+					escreva("**                                                         ** \n")
+					escreva("**                      7_ Água                            ** \n")
+					escreva("**                                                         ** \n")
+					escreva("**                     8_ Leite                            ** \n")
+					escreva("**                                                         ** \n")
+					escreva("**                      9_ Suco                            ** \n")
+					escreva("**                                                         ** \n")
+					escreva("**               10_ Ração Barata (3 Dias)                 ** \n")
+					escreva("**                                                         ** \n")
+					escreva("**                11_ Ração Média (5 Dias)                 ** \n")
+					escreva("**                                                         ** \n")
+					escreva("**                 12_ Ração Cara (7 Dias)                 ** \n")
+					escreva("**                                                         ** \n")
+					escreva("************************************************************* \n")
+					leia(opcao)
+
+					escolha(opcao){
+						caso 1:
+							escreva("Quantas Carnes de Gato você deseja comprar? \n")
+							leia(quantidade)
+							escreva("Compra reultará em: ", quantidade * valor__carne_de_gato)
+							escreva("\n Deseja comprar? \n")
+							escreva("1_  sim \n")
+							escreva("2_  não \n")
+							leia(opcao)
+							
+							escolha(opcao){
+								caso 1:
+									se(quantidade * valor__carne_de_gato <= dinheiro){
+										escreva("Compra realizada com sucesso!")															
+									}
+									senao{
+										escreva("Compra negada")
+									}
+								pare
+								caso 2:
+									escreva("Compra negada")
+								pare
+							}//fim escolha compra
+						caso 2:
+							escreva("Quantos animais você deseja comprar? \n")
+							leia(quantidade)
+							escreva("Compra reultará em: ", quantidade * valor__carne_de_cachorro)
+							escreva("\n Deseja comprar? \n")
+							escreva("1_  sim \n")
+							escreva("2_  não \n")
+							leia(opcao)
+							
+							escolha(opcao){
+								caso 1:
+									se(quantidade * valor__carne_de_cachorro <= dinheiro){
+										escreva("Compra realizada com sucesso!")															
+									}
+									senao{
+										escreva("Compra negada")
+									}
+								pare
+								caso 2:
+									escreva("Compra negada")
+								pare
+							}//fim escolha compra
+						caso 3:
+							escreva("Quantos animais você deseja comprar? \n")
+							leia(quantidade)
+							escreva("Compra reultará em: ", quantidade * valor__carne_de_boi)
+							escreva("\n Deseja comprar? \n")
+							escreva("1_  sim \n")
+							escreva("2_  não \n")
+							leia(opcao)
+							
+							escolha(opcao){
+								caso 1:
+									se(quantidade * valor__carne_de_boi <= dinheiro){
+										escreva("Compra realizada com sucesso!")															
+									}
+									senao{
+										escreva("Compra negada")
+									}
+								pare
+								caso 2:
+									escreva("Compra negada")
+								pare
+							}//fim escolha compra
+						caso 4:
+							escreva("Quantos animais você deseja comprar? \n")
+							leia(quantidade)
+							escreva("Compra reultará em: ", quantidade * valor_verduras)
+							escreva("\n Deseja comprar? \n")
+							escreva("1_  sim \n")
+							escreva("2_  não \n")
+							leia(opcao)
+							
+							escolha(opcao){
+								caso 1:
+									se(quantidade * valor_verduras <= dinheiro){
+										escreva("Compra realizada com sucesso!")															
+									}
+									senao{
+										escreva("Compra negada")
+									}
+								pare
+								caso 2:
+									escreva("Compra negada")
+								pare
+							}//fim escolha compra
+						caso 5:
+							escreva("Quantos animais você deseja comprar? \n")
+							leia(quantidade)
+							escreva("Compra reultará em: ", quantidade * valor_frutas)
+							escreva("\n Deseja comprar? \n")
+							escreva("1_  sim \n")
+							escreva("2_  não \n")
+							leia(opcao)
+							
+							escolha(opcao){
+								caso 1:
+									se(quantidade * valor_frutas <= dinheiro){
+										escreva("Compra realizada com sucesso!")															
+									}
+									senao{
+										escreva("Compra negada")
+									}
+								pare
+								caso 2:
+									escreva("Compra negada")
+								pare
+							}//fim escolha compra
+						caso 6:
+							escreva("Quantos animais você deseja comprar? \n")
+							leia(quantidade)
+							escreva("Compra reultará em: ", quantidade * valor_cereais)
+							escreva("\n Deseja comprar? \n")
+							escreva("1_  sim \n")
+							escreva("2_  não \n")
+							leia(opcao)
+							
+							escolha(opcao){
+								caso 1:
+									se(quantidade * valor_cereais <= dinheiro){
+										escreva("Compra realizada com sucesso!")															
+									}
+									senao{
+										escreva("Compra negada")
+									}
+								pare
+								caso 2:
+									escreva("Compra negada")
+								pare
+							}//fim escolha compra
+						caso 7:
+							escreva("Quantos animais você deseja comprar? \n")
+							leia(quantidade)
+							escreva("Compra reultará em: ", quantidade *valor_agua)
+							escreva("\n Deseja comprar? \n")
+							escreva("1_  sim \n")
+							escreva("2_  não \n")
+							leia(opcao)
+							
+							escolha(opcao){
+								caso 1:
+									se(quantidade * valor_agua <= dinheiro){
+										escreva("Compra realizada com sucesso!")															
+									}
+									senao{
+										escreva("Compra negada")
+									}
+								pare
+								caso 2:
+									escreva("Compra negada")
+								pare
+							}//fim escolha compra
+						caso 8:
+							escreva("Quantos animais você deseja comprar? \n")
+							leia(quantidade)
+							escreva("Compra reultará em: ", quantidade * valor_leite)
+							escreva("\n Deseja comprar? \n")
+							escreva("1_  sim \n")
+							escreva("2_  não \n")
+							leia(opcao)
+							
+							escolha(opcao){
+								caso 1:
+									se(quantidade * valor_leite <= dinheiro){
+										escreva("Compra realizada com sucesso!")															
+									}
+									senao{
+										escreva("Compra negada")
+									}
+								pare
+								caso 2:
+									escreva("Compra negada")
+								pare
+							}//fim escolha compra
+						caso 9:
+							escreva("Quantos animais você deseja comprar? \n")
+							leia(quantidade)
+							escreva("Compra reultará em: ", quantidade * valor_suco)
+							escreva("\n Deseja comprar? \n")
+							escreva("1_  sim \n")
+							escreva("2_  não \n")
+							leia(opcao)
+							
+							escolha(opcao){
+								caso 1:
+									se(quantidade * valor_suco <= dinheiro){
+										escreva("Compra realizada com sucesso!")															
+									}
+									senao{
+										escreva("Compra negada")
+									}
+								pare
+								caso 2:
+									escreva("Compra negada")
+								pare
+							}//fim escolha compra
+						caso 10:
+							escreva("Quantos animais você deseja comprar? \n")
+							leia(quantidade)
+							escreva("Compra reultará em: ", quantidade * valor__racao_barata)
+							escreva("\n Deseja comprar? \n")
+							escreva("1_  sim \n")
+							escreva("2_  não \n")
+							leia(opcao)
+							
+							escolha(opcao){
+								caso 1:
+									se(quantidade * valor__racao_barata <= dinheiro){
+										escreva("Compra realizada com sucesso!")															
+									}
+									senao{
+										escreva("Compra negada")
+									}
+								pare
+								caso 2:
+									escreva("Compra negada")
+								pare
+							}//fim escolha compra
+						caso 11:
+							escreva("Quantos animais você deseja comprar? \n")
+							leia(quantidade)
+							escreva("Compra reultará em: ", quantidade * valor__racao_media)
+							escreva("\n Deseja comprar? \n")
+							escreva("1_  sim \n")
+							escreva("2_  não \n")
+							leia(opcao)
+							
+							escolha(opcao){
+								caso 1:
+									se(quantidade * valor__racao_media <= dinheiro){
+										escreva("Compra realizada com sucesso!")															
+									}
+									senao{
+										escreva("Compra negada")
+									}
+								pare
+								caso 2:
+									escreva("Compra negada")
+								pare
+							}//fim escolha compra
+						caso 12:
+							escreva("Quantos animais você deseja comprar? \n")
+							leia(quantidade)
+							escreva("Compra reultará em: ", quantidade * valor__racao_cara)
+							escreva("\n Deseja comprar? \n")
+							escreva("1_  sim \n")
+							escreva("2_  não \n")
+							leia(opcao)
+							
+							escolha(opcao){
+								caso 1:
+									se(quantidade * valor__racao_cara <= dinheiro){
+										escreva("Compra realizada com sucesso!")															
+									}
+									senao{
+										escreva("Compra negada")
+									}
+								pare
+								caso 2:
+									escreva("Compra negada")
+								pare
+							}//fim escolha compra					
+					}//escolha alimentos
+	}//fim mercado alimento
+
+	funcao MercadoSemente(){
+		
+	}//funcao mercado alimento
 
 		funcao Animais(){
 				limpa()
 				escreva("************************************************************* \n")
 				escreva("**                                                         ** \n")
-				escreva("** Qual animal deseja *operar(mudar este nome futuramente) ** \n")
+				escreva("** Qual animal deseja administrar ** \n")
 				escreva("**                                                         ** \n")
 				escreva("**                   Escolha uma opção:                    ** \n")
 				escreva("**                                                         ** \n")
@@ -254,6 +614,14 @@ programa
 								caso 1:
 								pare
 								caso 2:
+									se(time_leite <= 0){
+										leite = leite + vaca
+										time_leite++
+										escreva("Leite tirado com sucesso!")
+									}
+									senao{
+										escreva("Já tirou leite de todas as vacas!")
+									}
 								pare
 								caso 3:
 								pare
