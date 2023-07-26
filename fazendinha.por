@@ -100,7 +100,7 @@ programa
 				u.aguarde(8000)
 				limpa()
 				escreva("Boa Sorte!")
-				u.aguarde(8000)
+				u.aguarde(3000)
 				limpa()
 				
 			}//se
@@ -186,14 +186,20 @@ programa
 							escolha(opcao){
 								caso 1:
 									se(quantidade * valor_vaca <= dinheiro){
-										escreva("Compra realizada com sucesso!")															
+										limpa()
+										escreva("Compra realizada com sucesso!")
+										u.aguarde(2000)															
 									}
 									senao{
+										limpa()
 										escreva("Compra negada")
+										u.aguarde(2000)
 									}
 								pare
 								caso 2:
+									limpa()
 									escreva("Compra negada")
+									u.aguarde(2000)
 								pare
 							}//fim escolha compra
 						pare
@@ -209,14 +215,20 @@ programa
 							escolha(opcao){
 								caso 1:
 									se(quantidade * valor_touro <= dinheiro){
-										escreva("Compra realizada com sucesso!")															
+										limpa()
+										escreva("Compra realizada com sucesso!")
+										u.aguarde(2000)															
 									}
 									senao{
+										limpa()
 										escreva("Compra negada")
+										u.aguarde(2000)
 									}
 								pare
 								caso 2:
+									limpa()
 									escreva("Compra negada")
+									u.aguarde(2000)
 								pare
 							}//fim escolha compra
 						pare
@@ -232,14 +244,20 @@ programa
 							escolha(opcao){
 								caso 1:
 									se(quantidade * valor_jegue <= dinheiro){
-										escreva("Compra realizada com sucesso!")															
+										limpa()
+										escreva("Compra realizada com sucesso!")
+										u.aguarde(2000)															
 									}
 									senao{
+										limpa()
 										escreva("Compra negada")
+										u.aguarde(2000)
 									}
 								pare
 								caso 2:
+									limpa()
 									escreva("Compra negada")
+									u.aguarde(2000)
 								pare
 							}//fim escolha compra
 						pare
@@ -255,14 +273,20 @@ programa
 							escolha(opcao){
 								caso 1:
 									se(quantidade * valor_jumenta <= dinheiro){
-										escreva("Compra realizada com sucesso!")															
+										limpa()
+										escreva("Compra realizada com sucesso!")
+										u.aguarde(2000)															
 									}
 									senao{
+										limpa()
 										escreva("Compra negada")
+										u.aguarde(2000)
 									}
 										pare
 								caso 2:
+									limpa()
 									escreva("Compra negada")
+									u.aguarde(2000)
 						pare
 							}//fim escolha compra
 				}// fim da escolha animal
@@ -314,14 +338,20 @@ programa
 							escolha(opcao){
 								caso 1:
 									se(quantidade * valor__carne_de_gato <= dinheiro){
-										escreva("Compra realizada com sucesso!")															
+										limpa()
+										escreva("Compra realizada com sucesso!")	
+										u.aguarde(2000)														
 									}
 									senao{
+										limpa()
 										escreva("Compra negada")
+										u.aguarde(2000)
 									}
 								pare
 								caso 2:
+									limpa()
 									escreva("Compra negada")
+									u.aguarde(2000)
 								pare
 							}//fim escolha compra
 						caso 2:
@@ -336,14 +366,20 @@ programa
 							escolha(opcao){
 								caso 1:
 									se(quantidade * valor__carne_de_cachorro <= dinheiro){
-										escreva("Compra realizada com sucesso!")															
+										limpa()
+										escreva("Compra realizada com sucesso!")	
+										u.aguarde(2000)														
 									}
 									senao{
+										limpa()
 										escreva("Compra negada")
+										u.aguarde(2000)
 									}
 								pare
 								caso 2:
+									limpa()
 									escreva("Compra negada")
+									u.aguarde(2000)
 								pare
 							}//fim escolha compra
 						caso 3:
@@ -358,14 +394,20 @@ programa
 							escolha(opcao){
 								caso 1:
 									se(quantidade * valor__carne_de_boi <= dinheiro){
-										escreva("Compra realizada com sucesso!")															
+										limpa()
+										escreva("Compra realizada com sucesso!")	
+										u.aguarde(2000)														
 									}
 									senao{
+										limpa()
 										escreva("Compra negada")
+										u.aguarde(2000)
 									}
 								pare
 								caso 2:
+									limpa()
 									escreva("Compra negada")
+									u.aguarde(2000)
 								pare
 							}//fim escolha compra
 						caso 4:
@@ -380,14 +422,20 @@ programa
 							escolha(opcao){
 								caso 1:
 									se(quantidade * valor_verduras <= dinheiro){
-										escreva("Compra realizada com sucesso!")															
+										limpa()
+										escreva("Compra realizada com sucesso!")	
+										u.aguarde(2000)														
 									}
 									senao{
+										limpa()
 										escreva("Compra negada")
+										u.aguarde(2000)
 									}
 								pare
 								caso 2:
+									limpa()
 									escreva("Compra negada")
+									u.aguarde(2000)
 								pare
 							}//fim escolha compra
 						caso 5:
@@ -402,14 +450,20 @@ programa
 							escolha(opcao){
 								caso 1:
 									se(quantidade * valor_frutas <= dinheiro){
-										escreva("Compra realizada com sucesso!")															
+										limpa()
+										escreva("Compra realizada com sucesso!")
+										u.aguarde(2000)															
 									}
 									senao{
+										limpa()
 										escreva("Compra negada")
+										u.aguarde(2000)
 									}
 								pare
 								caso 2:
+									limpa()
 									escreva("Compra negada")
+									u.aguarde(2000)
 								pare
 							}//fim escolha compra
 						caso 6:
@@ -424,14 +478,20 @@ programa
 							escolha(opcao){
 								caso 1:
 									se(quantidade * valor_cereais <= dinheiro){
-										escreva("Compra realizada com sucesso!")															
+										limpa()
+										escreva("Compra realizada com sucesso!")
+										u.aguarde(2000)															
 									}
 									senao{
+										limpa()
 										escreva("Compra negada")
+										u.aguarde(2000)
 									}
 								pare
 								caso 2:
+									limpa()
 									escreva("Compra negada")
+									u.aguarde(2000)
 								pare
 							}//fim escolha compra
 						caso 7:
@@ -446,14 +506,20 @@ programa
 							escolha(opcao){
 								caso 1:
 									se(quantidade * valor_agua <= dinheiro){
-										escreva("Compra realizada com sucesso!")															
+										limpa()
+										escreva("Compra realizada com sucesso!")
+										u.aguarde(2000)															
 									}
 									senao{
+										limpa()
 										escreva("Compra negada")
+										u.aguarde(2000)
 									}
 								pare
 								caso 2:
+									limpa()
 									escreva("Compra negada")
+									u.aguarde(2000)
 								pare
 							}//fim escolha compra
 						caso 8:
@@ -468,14 +534,20 @@ programa
 							escolha(opcao){
 								caso 1:
 									se(quantidade * valor_leite <= dinheiro){
-										escreva("Compra realizada com sucesso!")															
+										limpa()
+										escreva("Compra realizada com sucesso!")	
+										u.aguarde(2000)														
 									}
 									senao{
+										limpa()
 										escreva("Compra negada")
+										u.aguarde(2000)
 									}
 								pare
 								caso 2:
+									limpa()
 									escreva("Compra negada")
+									u.aguarde(2000)
 								pare
 							}//fim escolha compra
 						caso 9:
@@ -490,14 +562,20 @@ programa
 							escolha(opcao){
 								caso 1:
 									se(quantidade * valor_suco <= dinheiro){
-										escreva("Compra realizada com sucesso!")															
+										limpa()
+										escreva("Compra realizada com sucesso!")
+										u.aguarde(2000)															
 									}
 									senao{
+										limpa()
 										escreva("Compra negada")
+										u.aguarde(2000)
 									}
 								pare
 								caso 2:
+									limpa()
 									escreva("Compra negada")
+									u.aguarde(2000)
 								pare
 							}//fim escolha compra
 						caso 10:
@@ -512,14 +590,20 @@ programa
 							escolha(opcao){
 								caso 1:
 									se(quantidade * valor__racao_barata <= dinheiro){
-										escreva("Compra realizada com sucesso!")															
+										limpa()
+										escreva("Compra realizada com sucesso!")
+										u.aguarde(2000)															
 									}
 									senao{
+										limpa()
 										escreva("Compra negada")
+										u.aguarde(2000)
 									}
 								pare
 								caso 2:
+									limpa()
 									escreva("Compra negada")
+									u.aguarde(2000)
 								pare
 							}//fim escolha compra
 						caso 11:
@@ -534,14 +618,20 @@ programa
 							escolha(opcao){
 								caso 1:
 									se(quantidade * valor__racao_media <= dinheiro){
-										escreva("Compra realizada com sucesso!")															
+										limpa()
+										escreva("Compra realizada com sucesso!")	
+										u.aguarde(2000)														
 									}
 									senao{
+										limpa()
 										escreva("Compra negada")
+										u.aguarde(2000)
 									}
 								pare
 								caso 2:
+									limpa()
 									escreva("Compra negada")
+									u.aguarde(2000)
 								pare
 							}//fim escolha compra
 						caso 12:
@@ -556,14 +646,20 @@ programa
 							escolha(opcao){
 								caso 1:
 									se(quantidade * valor__racao_cara <= dinheiro){
-										escreva("Compra realizada com sucesso!")															
+										limpa()
+										escreva("Compra realizada com sucesso!")	
+										u.aguarde(2000)														
 									}
 									senao{
+										limpa()
 										escreva("Compra negada")
+										u.aguarde(2000)
 									}
 								pare
 								caso 2:
+									limpa()
 									escreva("Compra negada")
+									u.aguarde(2000)
 								pare
 							}//fim escolha compra					
 					}//escolha alimentos
@@ -618,9 +714,11 @@ programa
 										leite = leite + vaca
 										time_leite++
 										escreva("Leite tirado com sucesso!")
+										u.aguarde(2000)
 									}
 									senao{
 										escreva("Já tirou leite de todas as vacas!")
+										u.aguarde(2000)
 									}
 								pare
 								caso 3:
