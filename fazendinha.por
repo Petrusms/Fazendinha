@@ -1,11 +1,13 @@
 programa
 {
+	inclua biblioteca Tipos --> t
 	inclua biblioteca Util --> u
 	inclua biblioteca Matematica
 
 	//números de performance do jogo
 	inteiro numeroDias = 0
-	inteiro opcao
+	cadeia opcao = "0"
+	inteiro opcaoInt
 	inteiro dinheiro = 0
 	inteiro quantidade
 					
@@ -56,20 +58,30 @@ programa
 	     inteiro comecar_jogo = 0
 	     inteiro sair_voltar = 0
 	      
-	     
-		escreva("************************************************************* \n")
-		escreva("**         Olá,  seja bem vindo ao nosso jogo!             ** \n")
-		escreva("**                                                         ** \n")
-		escreva("**                   Escolha uma opção:                    ** \n")
-		escreva("**                                                         ** \n")
-		escreva("**                    1_ Iniciar jogo                      ** \n")
-		escreva("**                                                         ** \n")
-		escreva("**                    2_ Sair/Voltar                       ** \n")
-		escreva("**                                                         ** \n")
-		escreva("************************************************************* \n")
-		leia(opcao)
+	     enquanto(opcao != "1" ou opcao != "2"){
+			escreva("************************************************************* \n")
+			escreva("**         Olá,  seja bem vindo ao nosso jogo!             ** \n")
+			escreva("**                                                         ** \n")
+			escreva("**                   Escolha uma opção:                    ** \n")
+			escreva("**                                                         ** \n")
+			escreva("**                    1_ Iniciar jogo                      ** \n")
+			escreva("**                                                         ** \n")
+			escreva("**                    2_ Sair/Voltar                       ** \n")
+			escreva("**                                                         ** \n")
+			escreva("************************************************************* \n")
+			leia(opcao)
 
-		escolha(opcao){
+			se(opcao == "1" ou opcao == "2"){
+				opcaoInt = t.cadeia_para_inteiro(opcao, 10)
+				pare
+			}
+			senao{
+				escreva("Valor informado está errado!")
+				u.aguarde(1000)
+			}
+	     }
+
+		escolha(opcaoInt){
 			caso  1:
 			comercarJogo()
 			pare
@@ -118,7 +130,13 @@ programa
 			escreva("************************************************************* \n")
 			
 			leia(opcao)
-			escolha(opcao){
+			se(opcao == "1" ou opcao == "2"){
+					opcaoInt = t.cadeia_para_inteiro(opcao, 10)
+				}
+				senao{
+					escreva("Valor informado está errado!")
+				}
+			escolha(opcaoInt){
 				caso 1:
 					MercadoAnimais()
 				pare
@@ -145,8 +163,13 @@ programa
 					escreva("**                                                         ** \n")
 					escreva("************************************************************* \n")
 					leia(opcao)
-					
-					escolha(opcao){
+					se(opcao == "1" ou opcao == "2" ou opcao == "3"){
+							opcaoInt = t.cadeia_para_inteiro(opcao, 10)
+						}
+						senao{
+							escreva("Valor informado está errado!")
+						}
+					escolha(opcaoInt){
 						caso 1:
 							 MercadoAnimais()
 						pare
@@ -173,7 +196,13 @@ programa
 					escreva("************************************************************* \n")
 					
 					leia(opcao)
-					escolha(opcao){
+					se(opcao == "1" ou opcao == "2" ou opcao == "3" ou opcao == "4"){
+						opcaoInt = t.cadeia_para_inteiro(opcao, 10)
+					}
+					senao{
+						escreva("Valor informado está errado!")
+					}
+					escolha(opcaoInt){
 						caso 1:
 							escreva("Quantos animais você deseja comprar? \n")
 							leia(quantidade)
@@ -183,7 +212,14 @@ programa
 							escreva("2_  não \n")
 							leia(opcao)
 							
-							escolha(opcao){
+							se(opcao == "1" ou opcao == "2"){
+								opcaoInt = t.cadeia_para_inteiro(opcao, 10)
+							}
+							senao{
+								escreva("Valor informado está errado!")
+							}
+							
+							escolha(opcaoInt){
 								caso 1:
 									se(quantidade * valor_vaca <= dinheiro){
 										limpa()
@@ -212,7 +248,15 @@ programa
 							escreva("2_  não \n")
 							leia(opcao)
 							
-							escolha(opcao){
+							se(opcao == "1" ou opcao == "2"){
+								opcaoInt = t.cadeia_para_inteiro(opcao, 10)
+							}
+							senao{
+								escreva("Valor informado está errado!")
+							}
+							
+							
+							escolha(opcaoInt){
 								caso 1:
 									se(quantidade * valor_touro <= dinheiro){
 										limpa()
@@ -240,8 +284,16 @@ programa
 							escreva("1_  sim \n")
 							escreva("2_  não \n")
 							leia(opcao)
+
+							se(opcao == "1" ou opcao == "2"){
+								opcaoInt = t.cadeia_para_inteiro(opcao, 10)
+							}
+							senao{
+								escreva("Valor informado está errado!")
+							}
 							
-							escolha(opcao){
+							
+							escolha(opcaoInt){
 								caso 1:
 									se(quantidade * valor_jegue <= dinheiro){
 										limpa()
@@ -269,8 +321,16 @@ programa
 							escreva("1_  sim \n")
 							escreva("2_  não \n")
 							leia(opcao)
+
+							se(opcao == "1" ou opcao == "2"){
+								opcaoInt = t.cadeia_para_inteiro(opcao, 10)
+							}
+							senao{
+								escreva("Valor informado está errado!")
+							}
 							
-							escolha(opcao){
+							
+							escolha(opcaoInt){
 								caso 1:
 									se(quantidade * valor_jumenta <= dinheiro){
 										limpa()
@@ -324,8 +384,14 @@ programa
 					escreva("**                                                         ** \n")
 					escreva("************************************************************* \n")
 					leia(opcao)
+					se(opcao == "1" ou opcao == "2" ou opcao == "3" ou opcao == "4" ou opcao == "5" ou opcao == "6" ou opcao == "7" ou opcao == "8" ou opcao == "9" ou opcao == "10" ou opcao == "11" ou opcao == "12"){
+						opcaoInt = t.cadeia_para_inteiro(opcao, 10)
+					}
+					senao{
+						escreva("Valor informado está errado!")
+					}
 
-					escolha(opcao){
+					escolha(opcaoInt){
 						caso 1:
 							escreva("Quantas Carnes de Gato você deseja comprar? \n")
 							leia(quantidade)
@@ -334,8 +400,16 @@ programa
 							escreva("1_  sim \n")
 							escreva("2_  não \n")
 							leia(opcao)
+
+							se(opcao == "1" ou opcao == "2"){
+								opcaoInt = t.cadeia_para_inteiro(opcao, 10)
+							}
+							senao{
+								escreva("Valor informado está errado!")
+							}
 							
-							escolha(opcao){
+							
+							escolha(opcaoInt){
 								caso 1:
 									se(quantidade * valor__carne_de_gato <= dinheiro){
 										limpa()
@@ -362,8 +436,16 @@ programa
 							escreva("1_  sim \n")
 							escreva("2_  não \n")
 							leia(opcao)
+
+							se(opcao == "1" ou opcao == "2"){
+								opcaoInt = t.cadeia_para_inteiro(opcao, 10)
+							}
+							senao{
+								escreva("Valor informado está errado!")
+							}
 							
-							escolha(opcao){
+							
+							escolha(opcaoInt){
 								caso 1:
 									se(quantidade * valor__carne_de_cachorro <= dinheiro){
 										limpa()
@@ -390,8 +472,16 @@ programa
 							escreva("1_  sim \n")
 							escreva("2_  não \n")
 							leia(opcao)
+
+							se(opcao == "1" ou opcao == "2"){
+								opcaoInt = t.cadeia_para_inteiro(opcao, 10)
+							}
+							senao{
+								escreva("Valor informado está errado!")
+							}
 							
-							escolha(opcao){
+							
+							escolha(opcaoInt){
 								caso 1:
 									se(quantidade * valor__carne_de_boi <= dinheiro){
 										limpa()
@@ -418,8 +508,16 @@ programa
 							escreva("1_  sim \n")
 							escreva("2_  não \n")
 							leia(opcao)
+
+							se(opcao == "1" ou opcao == "2"){
+								opcaoInt = t.cadeia_para_inteiro(opcao, 10)
+							}
+							senao{
+								escreva("Valor informado está errado!")
+							}
 							
-							escolha(opcao){
+							
+							escolha(opcaoInt){
 								caso 1:
 									se(quantidade * valor_verduras <= dinheiro){
 										limpa()
@@ -446,8 +544,16 @@ programa
 							escreva("1_  sim \n")
 							escreva("2_  não \n")
 							leia(opcao)
+
+							se(opcao == "1" ou opcao == "2"){
+								opcaoInt = t.cadeia_para_inteiro(opcao, 10)
+							}
+							senao{
+								escreva("Valor informado está errado!")
+							}
 							
-							escolha(opcao){
+							
+							escolha(opcaoInt){
 								caso 1:
 									se(quantidade * valor_frutas <= dinheiro){
 										limpa()
@@ -474,8 +580,16 @@ programa
 							escreva("1_  sim \n")
 							escreva("2_  não \n")
 							leia(opcao)
+
+							se(opcao == "1" ou opcao == "2"){
+								opcaoInt = t.cadeia_para_inteiro(opcao, 10)
+							}
+							senao{
+								escreva("Valor informado está errado!")
+							}
 							
-							escolha(opcao){
+							
+							escolha(opcaoInt){
 								caso 1:
 									se(quantidade * valor_cereais <= dinheiro){
 										limpa()
@@ -502,8 +616,16 @@ programa
 							escreva("1_  sim \n")
 							escreva("2_  não \n")
 							leia(opcao)
+
+							se(opcao == "1" ou opcao == "2"){
+								opcaoInt = t.cadeia_para_inteiro(opcao, 10)
+							}
+							senao{
+								escreva("Valor informado está errado!")
+							}
 							
-							escolha(opcao){
+							
+							escolha(opcaoInt){
 								caso 1:
 									se(quantidade * valor_agua <= dinheiro){
 										limpa()
@@ -530,8 +652,16 @@ programa
 							escreva("1_  sim \n")
 							escreva("2_  não \n")
 							leia(opcao)
+
+							se(opcao == "1" ou opcao == "2"){
+								opcaoInt = t.cadeia_para_inteiro(opcao, 10)
+							}
+							senao{
+								escreva("Valor informado está errado!")
+							}
 							
-							escolha(opcao){
+							
+							escolha(opcaoInt){
 								caso 1:
 									se(quantidade * valor_leite <= dinheiro){
 										limpa()
@@ -558,8 +688,16 @@ programa
 							escreva("1_  sim \n")
 							escreva("2_  não \n")
 							leia(opcao)
+
+							se(opcao == "1" ou opcao == "2"){
+								opcaoInt = t.cadeia_para_inteiro(opcao, 10)
+							}
+							senao{
+								escreva("Valor informado está errado!")
+							}
 							
-							escolha(opcao){
+							
+							escolha(opcaoInt){
 								caso 1:
 									se(quantidade * valor_suco <= dinheiro){
 										limpa()
@@ -586,8 +724,16 @@ programa
 							escreva("1_  sim \n")
 							escreva("2_  não \n")
 							leia(opcao)
+
+							se(opcao == "1" ou opcao == "2"){
+								opcaoInt = t.cadeia_para_inteiro(opcao, 10)
+							}
+							senao{
+								escreva("Valor informado está errado!")
+							}
 							
-							escolha(opcao){
+							
+							escolha(opcaoInt){
 								caso 1:
 									se(quantidade * valor__racao_barata <= dinheiro){
 										limpa()
@@ -614,8 +760,16 @@ programa
 							escreva("1_  sim \n")
 							escreva("2_  não \n")
 							leia(opcao)
+
+							se(opcao == "1" ou opcao == "2"){
+								opcaoInt = t.cadeia_para_inteiro(opcao, 10)
+							}
+							senao{
+								escreva("Valor informado está errado!")
+							}
 							
-							escolha(opcao){
+							
+							escolha(opcaoInt){
 								caso 1:
 									se(quantidade * valor__racao_media <= dinheiro){
 										limpa()
@@ -642,8 +796,16 @@ programa
 							escreva("1_  sim \n")
 							escreva("2_  não \n")
 							leia(opcao)
+
+							se(opcao == "1" ou opcao == "2"){
+								opcaoInt = t.cadeia_para_inteiro(opcao, 10)
+							}
+							senao{
+								escreva("Valor informado está errado!")
+							}
 							
-							escolha(opcao){
+							
+							escolha(opcaoInt){
 								caso 1:
 									se(quantidade * valor__racao_cara <= dinheiro){
 										limpa()
@@ -673,7 +835,7 @@ programa
 				limpa()
 				escreva("************************************************************* \n")
 				escreva("**                                                         ** \n")
-				escreva("** Qual animal deseja administrar ** \n")
+				escreva("**             Qual animal deseja administrar              ** \n")
 				escreva("**                                                         ** \n")
 				escreva("**                   Escolha uma opção:                    ** \n")
 				escreva("**                                                         ** \n")
@@ -688,7 +850,14 @@ programa
 				escreva("************************************************************* \n")
 				leia(opcao)
 				
-				escolha(opcao){
+				se(opcao == "1" ou opcao == "2" ou opcao == "3" ou opcao == "4"){
+					opcaoInt = t.cadeia_para_inteiro(opcao, 10)
+				}
+				senao{
+					escreva("Valor informado está errado!")
+				}
+				
+				escolha(opcaoInt){
 						caso 1:
 							limpa()
 							escreva("************************************************************* \n")
@@ -705,9 +874,16 @@ programa
 							escreva("**                                                         ** \n")
 							escreva("************************************************************* \n")
 							leia(opcao)
+							
+							se(opcao == "1" ou opcao == "2" ou opcao == "3"){
+								opcaoInt = t.cadeia_para_inteiro(opcao, 10)
+							}
+							senao{
+								escreva("Valor informado está errado!")
+							}
 
-							escolha(opcao){
-								caso 1:
+							escolha(opcaoInt){
+								caso 1://add
 								pare
 								caso 2:
 									se(time_leite <= 0){
@@ -721,7 +897,7 @@ programa
 										u.aguarde(2000)
 									}
 								pare
-								caso 3:
+								caso 3://add
 								pare
 							}// escolha vaca
 						pare
@@ -741,8 +917,15 @@ programa
 							escreva("**                                                         ** \n")
 							escreva("************************************************************* \n")
 							leia(opcao)
-
-							escolha(opcao){
+							
+							se(opcao == "1" ou opcao == "2" ou opcao == "3"){
+								opcaoInt = t.cadeia_para_inteiro(opcao, 10)
+							}
+							senao{
+								escreva("Valor informado está errado!")
+							}
+							
+							escolha(opcaoInt){
 								caso 1:
 								pare
 								caso 2:
@@ -767,8 +950,15 @@ programa
 							escreva("**                                                         ** \n")
 							escreva("************************************************************* \n")
 							leia(opcao)
-
-							escolha(opcao){
+							
+							se(opcao == "1" ou opcao == "2" ou opcao == "3"){
+								opcaoInt = t.cadeia_para_inteiro(opcao, 10)
+							}
+							senao{
+								escreva("Valor informado está errado!")
+							}
+							
+							escolha(opcaoInt){
 								caso 1:
 								pare
 								caso 2:
@@ -795,8 +985,15 @@ programa
 							escreva("**                                                         ** \n")
 							escreva("************************************************************* \n")
 							leia(opcao)
-
-							escolha(opcao){
+							
+							se(opcao == "1" ou opcao == "2" ou opcao == "3" ou opcao == "4"){
+								opcaoInt = t.cadeia_para_inteiro(opcao, 10)
+							}
+							senao{
+								escreva("Valor informado está errado!")
+							}
+							
+							escolha(opcaoInt){
 								caso 1:
 								pare
 								caso 2:
