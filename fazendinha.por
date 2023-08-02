@@ -1057,7 +1057,7 @@ programa
 							}//escolha jumenta
 						pare
 					
-					}//*operar(mudar este nome futuramente) animais
+					}//administrar animais
 		}//funcao Animais
 //programa 
 }
