@@ -116,26 +116,28 @@ programa
 				limpa()
 				
 			}//se
-			
-			escreva("************************************************************* \n")
-			escreva("**                                                         ** \n")
-			escreva("**               O que deseja fazer hoje?                  ** \n")
-			escreva("**                                                         ** \n")
-			escreva("**                   Escolha uma opção:                    ** \n")
-			escreva("**                                                         ** \n")
-			escreva("**                    1_ Mercado                           ** \n")
-			escreva("**                                                         ** \n")
-			escreva("**                    2_ Animais                           ** \n")
-			escreva("**                                                         ** \n")
-			escreva("************************************************************* \n")
-			
-			leia(opcao)
-			se(opcao == "1" ou opcao == "2"){
-					opcaoInt = t.cadeia_para_inteiro(opcao, 10)
-				}
-				senao{
-					escreva("Valor informado está errado!")
-				}
+			 enquanto(opcao != "1" ou opcao != "2"){
+				escreva("************************************************************* \n")
+				escreva("**                                                         ** \n")
+				escreva("**               O que deseja fazer hoje?                  ** \n")
+				escreva("**                                                         ** \n")
+				escreva("**                   Escolha uma opção:                    ** \n")
+				escreva("**                                                         ** \n")
+				escreva("**                    1_ Mercado                           ** \n")
+				escreva("**                                                         ** \n")
+				escreva("**                    2_ Animais                           ** \n")
+				escreva("**                                                         ** \n")
+				escreva("************************************************************* \n")
+				leia(opcao)
+
+				
+				se(opcao == "1" ou opcao == "2"){
+						opcaoInt = t.cadeia_para_inteiro(opcao, 10)
+					}
+					senao{
+						escreva("Valor informado está errado!")
+					}
+			 }
 			escolha(opcaoInt){
 				caso 1:
 					MercadoAnimais()
@@ -151,24 +153,28 @@ programa
 	} // fim da funcao comercarJogo
 
 	funcao Mercado(){
-					escreva("************************************************************* \n")
-					escreva("**                                                         ** \n")
-					escreva("**              Escolha o que deseja comprar               ** \n")
-					escreva("**                                                         ** \n")
-					escreva("**                    1_ Animais                           ** \n")
-					escreva("**                                                         ** \n")
-					escreva("**                    2_ Alimento                          ** \n")
-					escreva("**                                                         ** \n")
-					escreva("**                    3_ Sementes                          ** \n")
-					escreva("**                                                         ** \n")
-					escreva("************************************************************* \n")
-					leia(opcao)
-					se(opcao == "1" ou opcao == "2" ou opcao == "3"){
+					enquanto(opcao != "1" ou opcao != "2" ou opcao != "3"){
+						escreva("************************************************************* \n")
+						escreva("**                                                         ** \n")
+						escreva("**              Escolha o que deseja comprar               ** \n")
+						escreva("**                                                         ** \n")
+						escreva("**                    1_ Animais                           ** \n")
+						escreva("**                                                         ** \n")
+						escreva("**                    2_ Alimento                          ** \n")
+						escreva("**                                                         ** \n")
+						escreva("**                    3_ Sementes                          ** \n")
+						escreva("**                                                         ** \n")
+						escreva("************************************************************* \n")
+						leia(opcao)
+
+						se(opcao == "1" ou opcao == "2"  ou opcao == "3"){
 							opcaoInt = t.cadeia_para_inteiro(opcao, 10)
 						}
 						senao{
 							escreva("Valor informado está errado!")
 						}
+				 }
+
 					escolha(opcaoInt){
 						caso 1:
 							 MercadoAnimais()
@@ -181,27 +187,30 @@ programa
 	}
 
 	funcao MercadoAnimais(){
-					escreva("************************************************************* \n")
-					escreva("**                                                         ** \n")
-					escreva("**             Escolha um animal para comprar:             ** \n")
-					escreva("**                                                         ** \n")
-					escreva("**                    1_ Vaca                              ** \n")
-					escreva("**                                                         ** \n")
-					escreva("**                    2_ Touro                             ** \n")
-					escreva("**                                                         ** \n")
-					escreva("**                    3_ Jegue                             ** \n")
-					escreva("**                                                         ** \n")
-					escreva("**                    4_ Jumenta                           ** \n")
-					escreva("**                                                         ** \n")
-					escreva("************************************************************* \n")
+					enquanto(opcao != "1" ou opcao != "2" ou opcao != "3" ou opcao != "4"){
+						escreva("************************************************************* \n")
+						escreva("**                                                         ** \n")
+						escreva("**             Escolha um animal para comprar:             ** \n")
+						escreva("**                                                         ** \n")
+						escreva("**                    1_ Vaca                              ** \n")
+						escreva("**                                                         ** \n")
+						escreva("**                    2_ Touro                             ** \n")
+						escreva("**                                                         ** \n")
+						escreva("**                    3_ Jegue                             ** \n")
+						escreva("**                                                         ** \n")
+						escreva("**                    4_ Jumenta                           ** \n")
+						escreva("**                                                         ** \n")
+						escreva("************************************************************* \n")
+						leia(opcao)
+
+						se(opcao == "1" ou opcao == "2"  ou opcao == "3"  ou opcao == "4"){
+								opcaoInt = t.cadeia_para_inteiro(opcao, 10)
+							}
+							senao{
+								escreva("Valor informado está errado!")
+							}
+					 }
 					
-					leia(opcao)
-					se(opcao == "1" ou opcao == "2" ou opcao == "3" ou opcao == "4"){
-						opcaoInt = t.cadeia_para_inteiro(opcao, 10)
-					}
-					senao{
-						escreva("Valor informado está errado!")
-					}
 					escolha(opcaoInt){
 						caso 1:
 							escreva("Quantos animais você deseja comprar? \n")
@@ -212,11 +221,13 @@ programa
 							escreva("2_  não \n")
 							leia(opcao)
 							
-							se(opcao == "1" ou opcao == "2"){
-								opcaoInt = t.cadeia_para_inteiro(opcao, 10)
-							}
-							senao{
-								escreva("Valor informado está errado!")
+							enquanto(opcao != "1" ou opcao != "2"){
+								se(opcao == "1" ou opcao == "2"){
+									opcaoInt = t.cadeia_para_inteiro(opcao, 10)
+								}
+								senao{
+									escreva("Valor informado está errado!")
+								}
 							}
 							
 							escolha(opcaoInt){
@@ -248,11 +259,13 @@ programa
 							escreva("2_  não \n")
 							leia(opcao)
 							
-							se(opcao == "1" ou opcao == "2"){
-								opcaoInt = t.cadeia_para_inteiro(opcao, 10)
-							}
-							senao{
-								escreva("Valor informado está errado!")
+							enquanto(opcao != "1" ou opcao != "2"){
+								se(opcao == "1" ou opcao == "2"){
+									opcaoInt = t.cadeia_para_inteiro(opcao, 10)
+								}
+								senao{
+									escreva("Valor informado está errado!")
+								}
 							}
 							
 							
@@ -285,11 +298,13 @@ programa
 							escreva("2_  não \n")
 							leia(opcao)
 
-							se(opcao == "1" ou opcao == "2"){
-								opcaoInt = t.cadeia_para_inteiro(opcao, 10)
-							}
-							senao{
-								escreva("Valor informado está errado!")
+							enquanto(opcao != "1" ou opcao != "2"){
+								se(opcao == "1" ou opcao == "2"){
+									opcaoInt = t.cadeia_para_inteiro(opcao, 10)
+								}
+								senao{
+									escreva("Valor informado está errado!")
+								}
 							}
 							
 							
@@ -322,11 +337,13 @@ programa
 							escreva("2_  não \n")
 							leia(opcao)
 
-							se(opcao == "1" ou opcao == "2"){
-								opcaoInt = t.cadeia_para_inteiro(opcao, 10)
-							}
-							senao{
-								escreva("Valor informado está errado!")
+							enquanto(opcao != "1" ou opcao != "2"){
+								se(opcao == "1" ou opcao == "2"){
+									opcaoInt = t.cadeia_para_inteiro(opcao, 10)
+								}
+								senao{
+									escreva("Valor informado está errado!")
+								}
 							}
 							
 							
@@ -353,42 +370,44 @@ programa
 	} //fim da funcao MercadoAnimais
 
 	funcao MercadoAllimento(){
-
-					escreva("************************************************************* \n")
-					escreva("**                                                         ** \n")
-					escreva("**           Escolha um alimentol para comprar:            ** \n")
-					escreva("**                                                         ** \n")
-					escreva("**                 1_ Carne de Gato                        ** \n")
-					escreva("**                                                         ** \n")
-					escreva("**                2_ Carne de Cachorro                     ** \n")
-					escreva("**                                                         ** \n")
-					escreva("**                  3_ Carne de Boi                        ** \n")
-					escreva("**                                                         ** \n")
-					escreva("**                    4_ Verduras                          ** \n")
-					escreva("**                                                         ** \n")
-					escreva("**                     5_ Frutas                           ** \n")
-					escreva("**                                                         ** \n")
-					escreva("**                     6_ Cereais                          ** \n")
-					escreva("**                                                         ** \n")
-					escreva("**                      7_ Água                            ** \n")
-					escreva("**                                                         ** \n")
-					escreva("**                     8_ Leite                            ** \n")
-					escreva("**                                                         ** \n")
-					escreva("**                      9_ Suco                            ** \n")
-					escreva("**                                                         ** \n")
-					escreva("**               10_ Ração Barata (3 Dias)                 ** \n")
-					escreva("**                                                         ** \n")
-					escreva("**                11_ Ração Média (5 Dias)                 ** \n")
-					escreva("**                                                         ** \n")
-					escreva("**                 12_ Ração Cara (7 Dias)                 ** \n")
-					escreva("**                                                         ** \n")
-					escreva("************************************************************* \n")
-					leia(opcao)
-					se(opcao == "1" ou opcao == "2" ou opcao == "3" ou opcao == "4" ou opcao == "5" ou opcao == "6" ou opcao == "7" ou opcao == "8" ou opcao == "9" ou opcao == "10" ou opcao == "11" ou opcao == "12"){
-						opcaoInt = t.cadeia_para_inteiro(opcao, 10)
-					}
-					senao{
-						escreva("Valor informado está errado!")
+					enquanto(opcao != "1" ou opcao != "2" ou opcao != "3" ou opcao != "4" ou opcao != "5" ou opcao != "6" ou opcao != "7" ou opcao != "8" ou opcao != "9" ou opcao != "10" ou opcao != "11" ou opcao != "12"){
+						escreva("************************************************************* \n")
+						escreva("**                                                         ** \n")
+						escreva("**           Escolha um alimentol para comprar:            ** \n")
+						escreva("**                                                         ** \n")
+						escreva("**                 1_ Carne de Gato                        ** \n")
+						escreva("**                                                         ** \n")
+						escreva("**                2_ Carne de Cachorro                     ** \n")
+						escreva("**                                                         ** \n")
+						escreva("**                  3_ Carne de Boi                        ** \n")
+						escreva("**                                                         ** \n")
+						escreva("**                    4_ Verduras                          ** \n")
+						escreva("**                                                         ** \n")
+						escreva("**                     5_ Frutas                           ** \n")
+						escreva("**                                                         ** \n")
+						escreva("**                     6_ Cereais                          ** \n")
+						escreva("**                                                         ** \n")
+						escreva("**                      7_ Água                            ** \n")
+						escreva("**                                                         ** \n")
+						escreva("**                     8_ Leite                            ** \n")
+						escreva("**                                                         ** \n")
+						escreva("**                      9_ Suco                            ** \n")
+						escreva("**                                                         ** \n")
+						escreva("**               10_ Ração Barata (3 Dias)                 ** \n")
+						escreva("**                                                         ** \n")
+						escreva("**                11_ Ração Média (5 Dias)                 ** \n")
+						escreva("**                                                         ** \n")
+						escreva("**                 12_ Ração Cara (7 Dias)                 ** \n")
+						escreva("**                                                         ** \n")
+						escreva("************************************************************* \n")
+						leia(opcao)
+						
+						se(opcao == "1" ou opcao == "2" ou opcao == "3" ou opcao == "4" ou opcao == "5" ou opcao == "6" ou opcao == "7" ou opcao == "8" ou opcao == "9" ou opcao == "10" ou opcao == "11" ou opcao == "12"){
+							opcaoInt = t.cadeia_para_inteiro(opcao, 10)
+						}
+						senao{
+							escreva("Valor informado está errado!")
+						}
 					}
 
 					escolha(opcaoInt){
@@ -401,11 +420,13 @@ programa
 							escreva("2_  não \n")
 							leia(opcao)
 
-							se(opcao == "1" ou opcao == "2"){
-								opcaoInt = t.cadeia_para_inteiro(opcao, 10)
-							}
-							senao{
-								escreva("Valor informado está errado!")
+							enquanto(opcao != "1" ou opcao != "2"){
+								se(opcao == "1" ou opcao == "2"){
+									opcaoInt = t.cadeia_para_inteiro(opcao, 10)
+								}
+								senao{
+									escreva("Valor informado está errado!")
+								}
 							}
 							
 							
@@ -437,11 +458,13 @@ programa
 							escreva("2_  não \n")
 							leia(opcao)
 
-							se(opcao == "1" ou opcao == "2"){
-								opcaoInt = t.cadeia_para_inteiro(opcao, 10)
-							}
-							senao{
-								escreva("Valor informado está errado!")
+							enquanto(opcao != "1" ou opcao != "2"){
+								se(opcao == "1" ou opcao == "2"){
+									opcaoInt = t.cadeia_para_inteiro(opcao, 10)
+								}
+								senao{
+									escreva("Valor informado está errado!")
+								}
 							}
 							
 							
@@ -473,11 +496,13 @@ programa
 							escreva("2_  não \n")
 							leia(opcao)
 
-							se(opcao == "1" ou opcao == "2"){
-								opcaoInt = t.cadeia_para_inteiro(opcao, 10)
-							}
-							senao{
-								escreva("Valor informado está errado!")
+							enquanto(opcao != "1" ou opcao != "2"){
+								se(opcao == "1" ou opcao == "2"){
+									opcaoInt = t.cadeia_para_inteiro(opcao, 10)
+								}
+								senao{
+									escreva("Valor informado está errado!")
+								}
 							}
 							
 							
@@ -509,11 +534,13 @@ programa
 							escreva("2_  não \n")
 							leia(opcao)
 
-							se(opcao == "1" ou opcao == "2"){
-								opcaoInt = t.cadeia_para_inteiro(opcao, 10)
-							}
-							senao{
-								escreva("Valor informado está errado!")
+							enquanto(opcao != "1" ou opcao != "2"){
+								se(opcao == "1" ou opcao == "2"){
+									opcaoInt = t.cadeia_para_inteiro(opcao, 10)
+								}
+								senao{
+									escreva("Valor informado está errado!")
+								}
 							}
 							
 							
@@ -545,11 +572,13 @@ programa
 							escreva("2_  não \n")
 							leia(opcao)
 
-							se(opcao == "1" ou opcao == "2"){
-								opcaoInt = t.cadeia_para_inteiro(opcao, 10)
-							}
-							senao{
-								escreva("Valor informado está errado!")
+							enquanto(opcao != "1" ou opcao != "2"){
+								se(opcao == "1" ou opcao == "2"){
+									opcaoInt = t.cadeia_para_inteiro(opcao, 10)
+								}
+								senao{
+									escreva("Valor informado está errado!")
+								}
 							}
 							
 							
@@ -581,11 +610,13 @@ programa
 							escreva("2_  não \n")
 							leia(opcao)
 
-							se(opcao == "1" ou opcao == "2"){
-								opcaoInt = t.cadeia_para_inteiro(opcao, 10)
-							}
-							senao{
-								escreva("Valor informado está errado!")
+							enquanto(opcao != "1" ou opcao != "2"){
+								se(opcao == "1" ou opcao == "2"){
+									opcaoInt = t.cadeia_para_inteiro(opcao, 10)
+								}
+								senao{
+									escreva("Valor informado está errado!")
+								}
 							}
 							
 							
@@ -617,11 +648,13 @@ programa
 							escreva("2_  não \n")
 							leia(opcao)
 
-							se(opcao == "1" ou opcao == "2"){
-								opcaoInt = t.cadeia_para_inteiro(opcao, 10)
-							}
-							senao{
-								escreva("Valor informado está errado!")
+							enquanto(opcao != "1" ou opcao != "2"){
+								se(opcao == "1" ou opcao == "2"){
+									opcaoInt = t.cadeia_para_inteiro(opcao, 10)
+								}
+								senao{
+									escreva("Valor informado está errado!")
+								}
 							}
 							
 							
@@ -653,11 +686,13 @@ programa
 							escreva("2_  não \n")
 							leia(opcao)
 
-							se(opcao == "1" ou opcao == "2"){
-								opcaoInt = t.cadeia_para_inteiro(opcao, 10)
-							}
-							senao{
-								escreva("Valor informado está errado!")
+							enquanto(opcao != "1" ou opcao != "2"){
+								se(opcao == "1" ou opcao == "2"){
+									opcaoInt = t.cadeia_para_inteiro(opcao, 10)
+								}
+								senao{
+									escreva("Valor informado está errado!")
+								}
 							}
 							
 							
@@ -689,11 +724,13 @@ programa
 							escreva("2_  não \n")
 							leia(opcao)
 
-							se(opcao == "1" ou opcao == "2"){
-								opcaoInt = t.cadeia_para_inteiro(opcao, 10)
-							}
-							senao{
-								escreva("Valor informado está errado!")
+							enquanto(opcao != "1" ou opcao != "2"){
+								se(opcao == "1" ou opcao == "2"){
+									opcaoInt = t.cadeia_para_inteiro(opcao, 10)
+								}
+								senao{
+									escreva("Valor informado está errado!")
+								}
 							}
 							
 							
@@ -725,11 +762,13 @@ programa
 							escreva("2_  não \n")
 							leia(opcao)
 
-							se(opcao == "1" ou opcao == "2"){
-								opcaoInt = t.cadeia_para_inteiro(opcao, 10)
-							}
-							senao{
-								escreva("Valor informado está errado!")
+							enquanto(opcao != "1" ou opcao != "2"){
+								se(opcao == "1" ou opcao == "2"){
+									opcaoInt = t.cadeia_para_inteiro(opcao, 10)
+								}
+								senao{
+									escreva("Valor informado está errado!")
+								}
 							}
 							
 							
@@ -761,11 +800,13 @@ programa
 							escreva("2_  não \n")
 							leia(opcao)
 
-							se(opcao == "1" ou opcao == "2"){
-								opcaoInt = t.cadeia_para_inteiro(opcao, 10)
-							}
-							senao{
-								escreva("Valor informado está errado!")
+							enquanto(opcao != "1" ou opcao != "2"){
+								se(opcao == "1" ou opcao == "2"){
+									opcaoInt = t.cadeia_para_inteiro(opcao, 10)
+								}
+								senao{
+									escreva("Valor informado está errado!")
+								}
 							}
 							
 							
@@ -797,11 +838,13 @@ programa
 							escreva("2_  não \n")
 							leia(opcao)
 
-							se(opcao == "1" ou opcao == "2"){
-								opcaoInt = t.cadeia_para_inteiro(opcao, 10)
-							}
-							senao{
-								escreva("Valor informado está errado!")
+							enquanto(opcao != "1" ou opcao != "2"){
+								se(opcao == "1" ou opcao == "2"){
+									opcaoInt = t.cadeia_para_inteiro(opcao, 10)
+								}
+								senao{
+									escreva("Valor informado está errado!")
+								}
 							}
 							
 							
@@ -832,54 +875,58 @@ programa
 	}//funcao mercado alimento
 
 		funcao Animais(){
-				limpa()
-				escreva("************************************************************* \n")
-				escreva("**                                                         ** \n")
-				escreva("**             Qual animal deseja administrar              ** \n")
-				escreva("**                                                         ** \n")
-				escreva("**                   Escolha uma opção:                    ** \n")
-				escreva("**                                                         ** \n")
-				escreva("**                    1_ Vaca                              ** \n")
-				escreva("**                                                         ** \n")
-				escreva("**                    2_ Touro                             ** \n")
-				escreva("**                                                         ** \n")
-				escreva("**                    3_ Jegue                             ** \n")
-				escreva("**                                                         ** \n")
-				escreva("**                    4_ Jumenta                           ** \n")
-				escreva("**                                                         ** \n")
-				escreva("************************************************************* \n")
-				leia(opcao)
+				enquanto(opcao != "1" ou opcao != "2" ou opcao != "3" ou opcao != "4"){
+					limpa()
+					escreva("************************************************************* \n")
+					escreva("**                                                         ** \n")
+					escreva("**             Qual animal deseja administrar              ** \n")
+					escreva("**                                                         ** \n")
+					escreva("**                   Escolha uma opção:                    ** \n")
+					escreva("**                                                         ** \n")
+					escreva("**                    1_ Vaca                              ** \n")
+					escreva("**                                                         ** \n")
+					escreva("**                    2_ Touro                             ** \n")
+					escreva("**                                                         ** \n")
+					escreva("**                    3_ Jegue                             ** \n")
+					escreva("**                                                         ** \n")
+					escreva("**                    4_ Jumenta                           ** \n")
+					escreva("**                                                         ** \n")
+					escreva("************************************************************* \n")
+					leia(opcao)
 				
-				se(opcao == "1" ou opcao == "2" ou opcao == "3" ou opcao == "4"){
-					opcaoInt = t.cadeia_para_inteiro(opcao, 10)
-				}
-				senao{
-					escreva("Valor informado está errado!")
+					se(opcao == "1" ou opcao == "2" ou opcao == "3" ou opcao == "4"){
+						opcaoInt = t.cadeia_para_inteiro(opcao, 10)
+					}
+					senao{
+						escreva("Valor informado está errado!")
+					}
 				}
 				
 				escolha(opcaoInt){
 						caso 1:
-							limpa()
-							escreva("************************************************************* \n")
-							escreva("**                                                         ** \n")
-							escreva("**                          Vaca                           ** \n")
-							escreva("**                                                         ** \n")
-							escreva("**                   Escolha uma opção:                    ** \n")
-							escreva("**                                                         ** \n")
-							escreva("**                      1_ Alimentar                       ** \n")
-							escreva("**                                                         ** \n")
-							escreva("**                     2_ Tirar leite                      ** \n")
-							escreva("**                                                         ** \n")
-							escreva("**                       3_ Vacinar                        ** \n")
-							escreva("**                                                         ** \n")
-							escreva("************************************************************* \n")
-							leia(opcao)
-							
-							se(opcao == "1" ou opcao == "2" ou opcao == "3"){
-								opcaoInt = t.cadeia_para_inteiro(opcao, 10)
-							}
-							senao{
-								escreva("Valor informado está errado!")
+							enquanto(opcao != "1" ou opcao != "2" ou opcao != "3"){
+								limpa()
+								escreva("************************************************************* \n")
+								escreva("**                                                         ** \n")
+								escreva("**                          Vaca                           ** \n")
+								escreva("**                                                         ** \n")
+								escreva("**                   Escolha uma opção:                    ** \n")
+								escreva("**                                                         ** \n")
+								escreva("**                      1_ Alimentar                       ** \n")
+								escreva("**                                                         ** \n")
+								escreva("**                     2_ Tirar leite                      ** \n")
+								escreva("**                                                         ** \n")
+								escreva("**                       3_ Vacinar                        ** \n")
+								escreva("**                                                         ** \n")
+								escreva("************************************************************* \n")
+								leia(opcao)
+								
+								se(opcao == "1" ou opcao == "2" ou opcao == "3"){
+									opcaoInt = t.cadeia_para_inteiro(opcao, 10)
+								}
+								senao{
+									escreva("Valor informado está errado!")
+								}
 							}
 
 							escolha(opcaoInt){
@@ -902,29 +949,30 @@ programa
 							}// escolha vaca
 						pare
 						caso 2:
-							limpa()
-							escreva("************************************************************* \n")
-							escreva("**                                                         ** \n")
-							escreva("**                         Touro                           ** \n")
-							escreva("**                                                         ** \n")
-							escreva("**                   Escolha uma opção:                    ** \n")
-							escreva("**                                                         ** \n")
-							escreva("**                      1_ Alimentar                       ** \n")
-							escreva("**                                                         ** \n")
-							escreva("**                       2_ Castrar                        ** \n")
-							escreva("**                                                         ** \n")
-							escreva("**                       3_ Vacinar                        ** \n")
-							escreva("**                                                         ** \n")
-							escreva("************************************************************* \n")
-							leia(opcao)
-							
-							se(opcao == "1" ou opcao == "2" ou opcao == "3"){
-								opcaoInt = t.cadeia_para_inteiro(opcao, 10)
+							enquanto(opcao != "1" ou opcao != "2" ou opcao != "3"){
+								limpa()
+								escreva("************************************************************* \n")
+								escreva("**                                                         ** \n")
+								escreva("**                         Touro                           ** \n")
+								escreva("**                                                         ** \n")
+								escreva("**                   Escolha uma opção:                    ** \n")
+								escreva("**                                                         ** \n")
+								escreva("**                      1_ Alimentar                       ** \n")
+								escreva("**                                                         ** \n")
+								escreva("**                       2_ Castrar                        ** \n")
+								escreva("**                                                         ** \n")
+								escreva("**                       3_ Vacinar                        ** \n")
+								escreva("**                                                         ** \n")
+								escreva("************************************************************* \n")
+								leia(opcao)
+								
+								se(opcao == "1" ou opcao == "2" ou opcao == "3"){
+									opcaoInt = t.cadeia_para_inteiro(opcao, 10)
+								}
+								senao{
+									escreva("Valor informado está errado!")
+								}
 							}
-							senao{
-								escreva("Valor informado está errado!")
-							}
-							
 							escolha(opcaoInt){
 								caso 1:
 								pare
@@ -935,27 +983,29 @@ programa
 							}//escolha touro
 						pare
 						caso 3:
-							limpa()
-							escreva("************************************************************* \n")
-							escreva("**                                                         ** \n")
-							escreva("**                         Jegue                           ** \n")
-							escreva("**                                                         ** \n")
-							escreva("**                   Escolha uma opção:                    ** \n")
-							escreva("**                                                         ** \n")
-							escreva("**                      1_ Alimentar                       ** \n")
-							escreva("**                                                         ** \n")
-							escreva("**                        2_ Montar                        ** \n")
-							escreva("**                                                         ** \n")
-							escreva("**                       3_ Vacinar                        ** \n")
-							escreva("**                                                         ** \n")
-							escreva("************************************************************* \n")
-							leia(opcao)
-							
-							se(opcao == "1" ou opcao == "2" ou opcao == "3"){
-								opcaoInt = t.cadeia_para_inteiro(opcao, 10)
-							}
-							senao{
-								escreva("Valor informado está errado!")
+							enquanto(opcao != "1" ou opcao != "2" ou opcao != "3"){
+								limpa()
+								escreva("************************************************************* \n")
+								escreva("**                                                         ** \n")
+								escreva("**                         Jegue                           ** \n")
+								escreva("**                                                         ** \n")
+								escreva("**                   Escolha uma opção:                    ** \n")
+								escreva("**                                                         ** \n")
+								escreva("**                      1_ Alimentar                       ** \n")
+								escreva("**                                                         ** \n")
+								escreva("**                        2_ Montar                        ** \n")
+								escreva("**                                                         ** \n")
+								escreva("**                       3_ Vacinar                        ** \n")
+								escreva("**                                                         ** \n")
+								escreva("************************************************************* \n")
+								leia(opcao)
+								
+								se(opcao == "1" ou opcao == "2" ou opcao == "3"){
+									opcaoInt = t.cadeia_para_inteiro(opcao, 10)
+								}
+								senao{
+									escreva("Valor informado está errado!")
+								}
 							}
 							
 							escolha(opcaoInt){
@@ -968,31 +1018,33 @@ programa
 							}//escolha jegue
 						pare
 						caso 4:
-							limpa()
-							escreva("************************************************************* \n")
-							escreva("**                                                         ** \n")
-							escreva("**                        Jumenta                          ** \n")
-							escreva("**                                                         ** \n")
-							escreva("**                   Escolha uma opção:                    ** \n")
-							escreva("**                                                         ** \n")
-							escreva("**                      1_ Alimentar                       ** \n")
-							escreva("**                                                         ** \n")
-							escreva("**                        2_ Montar                        ** \n")
-							escreva("**                                                         ** \n")
-							escreva("**                     3_ Tirar leite                      ** \n")
-							escreva("**                                                         ** \n")
-							escreva("**                       4_ Vacinar                        ** \n")
-							escreva("**                                                         ** \n")
-							escreva("************************************************************* \n")
-							leia(opcao)
+							enquanto(opcao != "1" ou opcao != "2" ou opcao != "3" ou opcao != "4"){
+								limpa()
+								escreva("************************************************************* \n")
+								escreva("**                                                         ** \n")
+								escreva("**                        Jumenta                          ** \n")
+								escreva("**                                                         ** \n")
+								escreva("**                   Escolha uma opção:                    ** \n")
+								escreva("**                                                         ** \n")
+								escreva("**                      1_ Alimentar                       ** \n")
+								escreva("**                                                         ** \n")
+								escreva("**                        2_ Montar                        ** \n")
+								escreva("**                                                         ** \n")
+								escreva("**                     3_ Tirar leite                      ** \n")
+								escreva("**                                                         ** \n")
+								escreva("**                       4_ Vacinar                        ** \n")
+								escreva("**                                                         ** \n")
+								escreva("************************************************************* \n")
+								leia(opcao)
 							
-							se(opcao == "1" ou opcao == "2" ou opcao == "3" ou opcao == "4"){
-								opcaoInt = t.cadeia_para_inteiro(opcao, 10)
+								se(opcao == "1" ou opcao == "2" ou opcao == "3" ou opcao == "4"){
+									opcaoInt = t.cadeia_para_inteiro(opcao, 10)
+								}
+								senao{
+									escreva("Valor informado está errado!")
+								}
 							}
-							senao{
-								escreva("Valor informado está errado!")
-							}
-							
+								
 							escolha(opcaoInt){
 								caso 1:
 								pare
