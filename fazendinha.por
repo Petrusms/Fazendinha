@@ -133,6 +133,7 @@ programa
 				
 				se(opcao == "1" ou opcao == "2"){
 						opcaoInt = t.cadeia_para_inteiro(opcao, 10)
+						pare
 					}
 					senao{
 						escreva("Valor informado está errado!\n")
@@ -169,6 +170,7 @@ programa
 
 						se(opcao == "1" ou opcao == "2"  ou opcao == "3"){
 							opcaoInt = t.cadeia_para_inteiro(opcao, 10)
+							pare
 						}
 						senao{
 							escreva("Valor informado está errado!\n")
@@ -205,6 +207,7 @@ programa
 
 						se(opcao == "1" ou opcao == "2"  ou opcao == "3"  ou opcao == "4"){
 								opcaoInt = t.cadeia_para_inteiro(opcao, 10)
+								pare
 							}
 							senao{
 								escreva("Valor informado está errado!\n")
@@ -224,6 +227,7 @@ programa
 							enquanto(opcao != "1" ou opcao != "2"){
 								se(opcao == "1" ou opcao == "2"){
 									opcaoInt = t.cadeia_para_inteiro(opcao, 10)
+									pare
 								}
 								senao{
 									escreva("Valor informado está errado!\n")
@@ -262,6 +266,7 @@ programa
 							enquanto(opcao != "1" ou opcao != "2"){
 								se(opcao == "1" ou opcao == "2"){
 									opcaoInt = t.cadeia_para_inteiro(opcao, 10)
+									pare
 								}
 								senao{
 									escreva("Valor informado está errado!\n")
@@ -301,6 +306,7 @@ programa
 							enquanto(opcao != "1" ou opcao != "2"){
 								se(opcao == "1" ou opcao == "2"){
 									opcaoInt = t.cadeia_para_inteiro(opcao, 10)
+									pare
 								}
 								senao{
 									escreva("Valor informado está errado!\n")
@@ -340,6 +346,7 @@ programa
 							enquanto(opcao != "1" ou opcao != "2"){
 								se(opcao == "1" ou opcao == "2"){
 									opcaoInt = t.cadeia_para_inteiro(opcao, 10)
+									pare
 								}
 								senao{
 									escreva("Valor informado está errado!\n")
@@ -423,6 +430,7 @@ programa
 							enquanto(opcao != "1" ou opcao != "2"){
 								se(opcao == "1" ou opcao == "2"){
 									opcaoInt = t.cadeia_para_inteiro(opcao, 10)
+									pare
 								}
 								senao{
 									escreva("Valor informado está errado!\n")
@@ -461,6 +469,7 @@ programa
 							enquanto(opcao != "1" ou opcao != "2"){
 								se(opcao == "1" ou opcao == "2"){
 									opcaoInt = t.cadeia_para_inteiro(opcao, 10)
+									pare
 								}
 								senao{
 									escreva("Valor informado está errado!\n")
@@ -499,6 +508,7 @@ programa
 							enquanto(opcao != "1" ou opcao != "2"){
 								se(opcao == "1" ou opcao == "2"){
 									opcaoInt = t.cadeia_para_inteiro(opcao, 10)
+									pare
 								}
 								senao{
 									escreva("Valor informado está errado!\n")
@@ -537,6 +547,7 @@ programa
 							enquanto(opcao != "1" ou opcao != "2"){
 								se(opcao == "1" ou opcao == "2"){
 									opcaoInt = t.cadeia_para_inteiro(opcao, 10)
+									pare
 								}
 								senao{
 									escreva("Valor informado está errado!\n")
@@ -575,6 +586,7 @@ programa
 							enquanto(opcao != "1" ou opcao != "2"){
 								se(opcao == "1" ou opcao == "2"){
 									opcaoInt = t.cadeia_para_inteiro(opcao, 10)
+									pare
 								}
 								senao{
 									escreva("Valor informado está errado!\n")
@@ -613,6 +625,7 @@ programa
 							enquanto(opcao != "1" ou opcao != "2"){
 								se(opcao == "1" ou opcao == "2"){
 									opcaoInt = t.cadeia_para_inteiro(opcao, 10)
+									pare
 								}
 								senao{
 									escreva("Valor informado está errado!\n")
@@ -651,6 +664,7 @@ programa
 							enquanto(opcao != "1" ou opcao != "2"){
 								se(opcao == "1" ou opcao == "2"){
 									opcaoInt = t.cadeia_para_inteiro(opcao, 10)
+									pare
 								}
 								senao{
 									escreva("Valor informado está errado!\n")
@@ -689,6 +703,7 @@ programa
 							enquanto(opcao != "1" ou opcao != "2"){
 								se(opcao == "1" ou opcao == "2"){
 									opcaoInt = t.cadeia_para_inteiro(opcao, 10)
+									pare
 								}
 								senao{
 									escreva("Valor informado está errado!\n")
@@ -727,6 +742,7 @@ programa
 							enquanto(opcao != "1" ou opcao != "2"){
 								se(opcao == "1" ou opcao == "2"){
 									opcaoInt = t.cadeia_para_inteiro(opcao, 10)
+									pare
 								}
 								senao{
 									escreva("Valor informado está errado!\n")
@@ -765,6 +781,7 @@ programa
 							enquanto(opcao != "1" ou opcao != "2"){
 								se(opcao == "1" ou opcao == "2"){
 									opcaoInt = t.cadeia_para_inteiro(opcao, 10)
+									pare
 								}
 								senao{
 									escreva("Valor informado está errado!\n")
@@ -803,6 +820,7 @@ programa
 							enquanto(opcao != "1" ou opcao != "2"){
 								se(opcao == "1" ou opcao == "2"){
 									opcaoInt = t.cadeia_para_inteiro(opcao, 10)
+									pare
 								}
 								senao{
 									escreva("Valor informado está errado!\n")
@@ -841,6 +859,7 @@ programa
 							enquanto(opcao != "1" ou opcao != "2"){
 								se(opcao == "1" ou opcao == "2"){
 									opcaoInt = t.cadeia_para_inteiro(opcao, 10)
+									pare
 								}
 								senao{
 									escreva("Valor informado está errado!\n")
@@ -896,6 +915,7 @@ programa
 				
 					se(opcao == "1" ou opcao == "2" ou opcao == "3" ou opcao == "4"){
 						opcaoInt = t.cadeia_para_inteiro(opcao, 10)
+						pare
 					}
 					senao{
 						escreva("Valor informado está errado!\n")
@@ -923,6 +943,7 @@ programa
 								
 								se(opcao == "1" ou opcao == "2" ou opcao == "3"){
 									opcaoInt = t.cadeia_para_inteiro(opcao, 10)
+									pare
 								}
 								senao{
 									escreva("Valor informado está errado!\n")
@@ -968,6 +989,7 @@ programa
 								
 								se(opcao == "1" ou opcao == "2" ou opcao == "3"){
 									opcaoInt = t.cadeia_para_inteiro(opcao, 10)
+									pare
 								}
 								senao{
 									escreva("Valor informado está errado!\n")
@@ -1002,6 +1024,7 @@ programa
 								
 								se(opcao == "1" ou opcao == "2" ou opcao == "3"){
 									opcaoInt = t.cadeia_para_inteiro(opcao, 10)
+									pare
 								}
 								senao{
 									escreva("Valor informado está errado!\n")
@@ -1039,6 +1062,7 @@ programa
 							
 								se(opcao == "1" ou opcao == "2" ou opcao == "3" ou opcao == "4"){
 									opcaoInt = t.cadeia_para_inteiro(opcao, 10)
+									pare
 								}
 								senao{
 									escreva("Valor informado está errado!\n")
