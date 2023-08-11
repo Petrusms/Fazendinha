@@ -76,7 +76,7 @@ programa
 				pare
 			}
 			senao{
-				escreva("Valor informado está errado!")
+				escreva("Valor informado está errado!\n")
 				u.aguarde(1000)
 			}
 	     }
@@ -135,7 +135,7 @@ programa
 						opcaoInt = t.cadeia_para_inteiro(opcao, 10)
 					}
 					senao{
-						escreva("Valor informado está errado!")
+						escreva("Valor informado está errado!\n")
 					}
 			 }
 			escolha(opcaoInt){
@@ -171,7 +171,7 @@ programa
 							opcaoInt = t.cadeia_para_inteiro(opcao, 10)
 						}
 						senao{
-							escreva("Valor informado está errado!")
+							escreva("Valor informado está errado!\n")
 						}
 				 }
 
@@ -207,7 +207,7 @@ programa
 								opcaoInt = t.cadeia_para_inteiro(opcao, 10)
 							}
 							senao{
-								escreva("Valor informado está errado!")
+								escreva("Valor informado está errado!\n")
 							}
 					 }
 					
@@ -226,7 +226,7 @@ programa
 									opcaoInt = t.cadeia_para_inteiro(opcao, 10)
 								}
 								senao{
-									escreva("Valor informado está errado!")
+									escreva("Valor informado está errado!\n")
 								}
 							}
 							
@@ -234,18 +234,18 @@ programa
 								caso 1:
 									se(quantidade * valor_vaca <= dinheiro){
 										limpa()
-										escreva("Compra realizada com sucesso!")
+										escreva("Compra realizada com sucesso!\n")
 										u.aguarde(2000)															
 									}
 									senao{
 										limpa()
-										escreva("Compra negada")
+										escreva("Compra negada\n")
 										u.aguarde(2000)
 									}
 								pare
 								caso 2:
 									limpa()
-									escreva("Compra negada")
+									escreva("Compra negada\n")
 									u.aguarde(2000)
 								pare
 							}//fim escolha compra
@@ -264,7 +264,7 @@ programa
 									opcaoInt = t.cadeia_para_inteiro(opcao, 10)
 								}
 								senao{
-									escreva("Valor informado está errado!")
+									escreva("Valor informado está errado!\n")
 								}
 							}
 							
@@ -273,18 +273,18 @@ programa
 								caso 1:
 									se(quantidade * valor_touro <= dinheiro){
 										limpa()
-										escreva("Compra realizada com sucesso!")
+										escreva("Compra realizada com sucesso!\n")
 										u.aguarde(2000)															
 									}
 									senao{
 										limpa()
-										escreva("Compra negada")
+										escreva("Compra negada\n")
 										u.aguarde(2000)
 									}
 								pare
 								caso 2:
 									limpa()
-									escreva("Compra negada")
+									escreva("Compra negada\n")
 									u.aguarde(2000)
 								pare
 							}//fim escolha compra
@@ -303,7 +303,7 @@ programa
 									opcaoInt = t.cadeia_para_inteiro(opcao, 10)
 								}
 								senao{
-									escreva("Valor informado está errado!")
+									escreva("Valor informado está errado!\n")
 								}
 							}
 							
@@ -312,18 +312,18 @@ programa
 								caso 1:
 									se(quantidade * valor_jegue <= dinheiro){
 										limpa()
-										escreva("Compra realizada com sucesso!")
+										escreva("Compra realizada com sucesso!\n")
 										u.aguarde(2000)															
 									}
 									senao{
 										limpa()
-										escreva("Compra negada")
+										escreva("Compra negada\n")
 										u.aguarde(2000)
 									}
 								pare
 								caso 2:
 									limpa()
-									escreva("Compra negada")
+									escreva("Compra negada\n")
 									u.aguarde(2000)
 								pare
 							}//fim escolha compra
@@ -342,7 +342,7 @@ programa
 									opcaoInt = t.cadeia_para_inteiro(opcao, 10)
 								}
 								senao{
-									escreva("Valor informado está errado!")
+									escreva("Valor informado está errado!\n")
 								}
 							}
 							
@@ -351,18 +351,18 @@ programa
 								caso 1:
 									se(quantidade * valor_jumenta <= dinheiro){
 										limpa()
-										escreva("Compra realizada com sucesso!")
+										escreva("Compra realizada com sucesso!\n")
 										u.aguarde(2000)															
 									}
 									senao{
 										limpa()
-										escreva("Compra negada")
+										escreva("Compra negada\n")
 										u.aguarde(2000)
 									}
 										pare
 								caso 2:
 									limpa()
-									escreva("Compra negada")
+									escreva("Compra negada\n")
 									u.aguarde(2000)
 						pare
 							}//fim escolha compra
@@ -406,7 +406,7 @@ programa
 							opcaoInt = t.cadeia_para_inteiro(opcao, 10)
 						}
 						senao{
-							escreva("Valor informado está errado!")
+							escreva("Valor informado está errado!\n")
 						}
 					}
 
@@ -425,7 +425,7 @@ programa
 									opcaoInt = t.cadeia_para_inteiro(opcao, 10)
 								}
 								senao{
-									escreva("Valor informado está errado!")
+									escreva("Valor informado está errado!\n")
 								}
 							}
 							
@@ -434,18 +434,18 @@ programa
 								caso 1:
 									se(quantidade * valor__carne_de_gato <= dinheiro){
 										limpa()
-										escreva("Compra realizada com sucesso!")	
+										escreva("Compra realizada com sucesso!\n")	
 										u.aguarde(2000)														
 									}
 									senao{
 										limpa()
-										escreva("Compra negada")
+										escreva("Compra negada\n")
 										u.aguarde(2000)
 									}
 								pare
 								caso 2:
 									limpa()
-									escreva("Compra negada")
+									escreva("Compra negada\n")
 									u.aguarde(2000)
 								pare
 							}//fim escolha compra
@@ -463,7 +463,7 @@ programa
 									opcaoInt = t.cadeia_para_inteiro(opcao, 10)
 								}
 								senao{
-									escreva("Valor informado está errado!")
+									escreva("Valor informado está errado!\n")
 								}
 							}
 							
@@ -472,18 +472,18 @@ programa
 								caso 1:
 									se(quantidade * valor__carne_de_cachorro <= dinheiro){
 										limpa()
-										escreva("Compra realizada com sucesso!")	
+										escreva("Compra realizada com sucesso!\n")	
 										u.aguarde(2000)														
 									}
 									senao{
 										limpa()
-										escreva("Compra negada")
+										escreva("Compra negada\n")
 										u.aguarde(2000)
 									}
 								pare
 								caso 2:
 									limpa()
-									escreva("Compra negada")
+									escreva("Compra negada\n")
 									u.aguarde(2000)
 								pare
 							}//fim escolha compra
@@ -501,7 +501,7 @@ programa
 									opcaoInt = t.cadeia_para_inteiro(opcao, 10)
 								}
 								senao{
-									escreva("Valor informado está errado!")
+									escreva("Valor informado está errado!\n")
 								}
 							}
 							
@@ -510,18 +510,18 @@ programa
 								caso 1:
 									se(quantidade * valor__carne_de_boi <= dinheiro){
 										limpa()
-										escreva("Compra realizada com sucesso!")	
+										escreva("Compra realizada com sucesso!\n")	
 										u.aguarde(2000)														
 									}
 									senao{
 										limpa()
-										escreva("Compra negada")
+										escreva("Compra negada\n")
 										u.aguarde(2000)
 									}
 								pare
 								caso 2:
 									limpa()
-									escreva("Compra negada")
+									escreva("Compra negada\n")
 									u.aguarde(2000)
 								pare
 							}//fim escolha compra
@@ -539,7 +539,7 @@ programa
 									opcaoInt = t.cadeia_para_inteiro(opcao, 10)
 								}
 								senao{
-									escreva("Valor informado está errado!")
+									escreva("Valor informado está errado!\n")
 								}
 							}
 							
@@ -548,18 +548,18 @@ programa
 								caso 1:
 									se(quantidade * valor_verduras <= dinheiro){
 										limpa()
-										escreva("Compra realizada com sucesso!")	
+										escreva("Compra realizada com sucesso!\n")	
 										u.aguarde(2000)														
 									}
 									senao{
 										limpa()
-										escreva("Compra negada")
+										escreva("Compra negada\n")
 										u.aguarde(2000)
 									}
 								pare
 								caso 2:
 									limpa()
-									escreva("Compra negada")
+									escreva("Compra negada\n")
 									u.aguarde(2000)
 								pare
 							}//fim escolha compra
@@ -577,7 +577,7 @@ programa
 									opcaoInt = t.cadeia_para_inteiro(opcao, 10)
 								}
 								senao{
-									escreva("Valor informado está errado!")
+									escreva("Valor informado está errado!\n")
 								}
 							}
 							
@@ -586,18 +586,18 @@ programa
 								caso 1:
 									se(quantidade * valor_frutas <= dinheiro){
 										limpa()
-										escreva("Compra realizada com sucesso!")
+										escreva("Compra realizada com sucesso!\n")
 										u.aguarde(2000)															
 									}
 									senao{
 										limpa()
-										escreva("Compra negada")
+										escreva("Compra negada\n")
 										u.aguarde(2000)
 									}
 								pare
 								caso 2:
 									limpa()
-									escreva("Compra negada")
+									escreva("Compra negada\n")
 									u.aguarde(2000)
 								pare
 							}//fim escolha compra
@@ -615,7 +615,7 @@ programa
 									opcaoInt = t.cadeia_para_inteiro(opcao, 10)
 								}
 								senao{
-									escreva("Valor informado está errado!")
+									escreva("Valor informado está errado!\n")
 								}
 							}
 							
@@ -624,18 +624,18 @@ programa
 								caso 1:
 									se(quantidade * valor_cereais <= dinheiro){
 										limpa()
-										escreva("Compra realizada com sucesso!")
+										escreva("Compra realizada com sucesso!\n")
 										u.aguarde(2000)															
 									}
 									senao{
 										limpa()
-										escreva("Compra negada")
+										escreva("Compra negada\n")
 										u.aguarde(2000)
 									}
 								pare
 								caso 2:
 									limpa()
-									escreva("Compra negada")
+									escreva("Compra negada\n")
 									u.aguarde(2000)
 								pare
 							}//fim escolha compra
@@ -653,7 +653,7 @@ programa
 									opcaoInt = t.cadeia_para_inteiro(opcao, 10)
 								}
 								senao{
-									escreva("Valor informado está errado!")
+									escreva("Valor informado está errado!\n")
 								}
 							}
 							
@@ -662,18 +662,18 @@ programa
 								caso 1:
 									se(quantidade * valor_agua <= dinheiro){
 										limpa()
-										escreva("Compra realizada com sucesso!")
+										escreva("Compra realizada com sucesso!\n")
 										u.aguarde(2000)															
 									}
 									senao{
 										limpa()
-										escreva("Compra negada")
+										escreva("Compra negada\n")
 										u.aguarde(2000)
 									}
 								pare
 								caso 2:
 									limpa()
-									escreva("Compra negada")
+									escreva("Compra negada\n")
 									u.aguarde(2000)
 								pare
 							}//fim escolha compra
@@ -691,7 +691,7 @@ programa
 									opcaoInt = t.cadeia_para_inteiro(opcao, 10)
 								}
 								senao{
-									escreva("Valor informado está errado!")
+									escreva("Valor informado está errado!\n")
 								}
 							}
 							
@@ -705,13 +705,13 @@ programa
 									}
 									senao{
 										limpa()
-										escreva("Compra negada")
+										escreva("Compra negada\n")
 										u.aguarde(2000)
 									}
 								pare
 								caso 2:
 									limpa()
-									escreva("Compra negada")
+									escreva("Compra negada\n")
 									u.aguarde(2000)
 								pare
 							}//fim escolha compra
@@ -729,7 +729,7 @@ programa
 									opcaoInt = t.cadeia_para_inteiro(opcao, 10)
 								}
 								senao{
-									escreva("Valor informado está errado!")
+									escreva("Valor informado está errado!\n")
 								}
 							}
 							
@@ -738,18 +738,18 @@ programa
 								caso 1:
 									se(quantidade * valor_suco <= dinheiro){
 										limpa()
-										escreva("Compra realizada com sucesso!")
+										escreva("Compra realizada com sucesso!\n")
 										u.aguarde(2000)															
 									}
 									senao{
 										limpa()
-										escreva("Compra negada")
+										escreva("Compra negada\n")
 										u.aguarde(2000)
 									}
 								pare
 								caso 2:
 									limpa()
-									escreva("Compra negada")
+									escreva("Compra negada\n")
 									u.aguarde(2000)
 								pare
 							}//fim escolha compra
@@ -767,7 +767,7 @@ programa
 									opcaoInt = t.cadeia_para_inteiro(opcao, 10)
 								}
 								senao{
-									escreva("Valor informado está errado!")
+									escreva("Valor informado está errado!\n")
 								}
 							}
 							
@@ -776,18 +776,18 @@ programa
 								caso 1:
 									se(quantidade * valor__racao_barata <= dinheiro){
 										limpa()
-										escreva("Compra realizada com sucesso!")
+										escreva("Compra realizada com sucesso!\n")
 										u.aguarde(2000)															
 									}
 									senao{
 										limpa()
-										escreva("Compra negada")
+										escreva("Compra negada\n")
 										u.aguarde(2000)
 									}
 								pare
 								caso 2:
 									limpa()
-									escreva("Compra negada")
+									escreva("Compra negada\n")
 									u.aguarde(2000)
 								pare
 							}//fim escolha compra
@@ -805,7 +805,7 @@ programa
 									opcaoInt = t.cadeia_para_inteiro(opcao, 10)
 								}
 								senao{
-									escreva("Valor informado está errado!")
+									escreva("Valor informado está errado!\n")
 								}
 							}
 							
@@ -814,18 +814,18 @@ programa
 								caso 1:
 									se(quantidade * valor__racao_media <= dinheiro){
 										limpa()
-										escreva("Compra realizada com sucesso!")	
+										escreva("Compra realizada com sucesso!\n")	
 										u.aguarde(2000)														
 									}
 									senao{
 										limpa()
-										escreva("Compra negada")
+										escreva("Compra negada\n")
 										u.aguarde(2000)
 									}
 								pare
 								caso 2:
 									limpa()
-									escreva("Compra negada")
+									escreva("Compra negada\n")
 									u.aguarde(2000)
 								pare
 							}//fim escolha compra
@@ -843,7 +843,7 @@ programa
 									opcaoInt = t.cadeia_para_inteiro(opcao, 10)
 								}
 								senao{
-									escreva("Valor informado está errado!")
+									escreva("Valor informado está errado!\n")
 								}
 							}
 							
@@ -852,18 +852,18 @@ programa
 								caso 1:
 									se(quantidade * valor__racao_cara <= dinheiro){
 										limpa()
-										escreva("Compra realizada com sucesso!")	
+										escreva("Compra realizada com sucesso!\n")	
 										u.aguarde(2000)														
 									}
 									senao{
 										limpa()
-										escreva("Compra negada")
+										escreva("Compra negada\n")
 										u.aguarde(2000)
 									}
 								pare
 								caso 2:
 									limpa()
-									escreva("Compra negada")
+									escreva("Compra negada\n")
 									u.aguarde(2000)
 								pare
 							}//fim escolha compra					
@@ -898,7 +898,7 @@ programa
 						opcaoInt = t.cadeia_para_inteiro(opcao, 10)
 					}
 					senao{
-						escreva("Valor informado está errado!")
+						escreva("Valor informado está errado!\n")
 					}
 				}
 				
@@ -925,7 +925,7 @@ programa
 									opcaoInt = t.cadeia_para_inteiro(opcao, 10)
 								}
 								senao{
-									escreva("Valor informado está errado!")
+									escreva("Valor informado está errado!\n")
 								}
 							}
 
@@ -936,11 +936,11 @@ programa
 									se(time_leite <= 0){
 										leite = leite + vaca
 										time_leite++
-										escreva("Leite tirado com sucesso!")
+										escreva("Leite tirado com sucesso!\n")
 										u.aguarde(2000)
 									}
 									senao{
-										escreva("Já tirou leite de todas as vacas!")
+										escreva("Já tirou leite de todas as vacas!\nv")
 										u.aguarde(2000)
 									}
 								pare
@@ -970,7 +970,7 @@ programa
 									opcaoInt = t.cadeia_para_inteiro(opcao, 10)
 								}
 								senao{
-									escreva("Valor informado está errado!")
+									escreva("Valor informado está errado!\n")
 								}
 							}
 							escolha(opcaoInt){
@@ -1004,7 +1004,7 @@ programa
 									opcaoInt = t.cadeia_para_inteiro(opcao, 10)
 								}
 								senao{
-									escreva("Valor informado está errado!")
+									escreva("Valor informado está errado!\n")
 								}
 							}
 							
@@ -1041,7 +1041,7 @@ programa
 									opcaoInt = t.cadeia_para_inteiro(opcao, 10)
 								}
 								senao{
-									escreva("Valor informado está errado!")
+									escreva("Valor informado está errado!\n")
 								}
 							}
 								
