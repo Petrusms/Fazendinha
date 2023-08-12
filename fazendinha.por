@@ -52,8 +52,7 @@ programa
      //Produção
      inteiro time_leite = 0
 	
-	funcao inicio()
-	{
+	funcao inicio(){
 	    
 	     inteiro comecar_jogo = 0
 	     inteiro sair_voltar = 0
@@ -89,7 +88,6 @@ programa
 		
 		
 	}// fim funcao incicio
-
 
 	funcao comercarJogo(){
 		
@@ -183,13 +181,13 @@ programa
 							 MercadoAnimais()
 						pare
 						caso 2:
-							MercadoAllimento()
+							MercadoAlimento()
 						pare
 						caso 3:
 							MercadoSemente()
 						pare
-					}
-	}
+					}//escolha mercado
+	}//funcao Mercado
 
 	funcao MercadoAnimais(){
 					enquanto(opcao != "1" ou opcao != "2" ou opcao != "3" ou opcao != "4"){
@@ -236,7 +234,7 @@ programa
 					}// fim da escolha animal
 	} //fim da funcao MercadoAnimais
 
-	funcao MercadoAllimento(){
+	funcao MercadoAlimento(){
 					enquanto(opcao != "1" ou opcao != "2" ou opcao != "3" ou opcao != "4" ou opcao != "5" ou opcao != "6" ou opcao != "7" ou opcao != "8" ou opcao != "9" ou opcao != "10" ou opcao != "11" ou opcao != "12"){
 						escreva("************************************************************* \n")
 						escreva("**                                                         ** \n")
@@ -330,7 +328,187 @@ programa
 		
 	}//funcao mercado alimento
 
-		funcao Animais(){
+	funcao Venda(){
+		enquanto(opcao != "1" ou opcao != "2" ou opcao != "3"){
+						escreva("************************************************************* \n")
+						escreva("**                                                         ** \n")
+						escreva("**               Escolha o que deseja vender               ** \n")
+						escreva("**                                                         ** \n")
+						escreva("**                    1_ Animais                           ** \n")
+						escreva("**                                                         ** \n")
+						escreva("**                    2_ Alimento                          ** \n")
+						escreva("**                                                         ** \n")
+						escreva("**                    3_ Sementes                          ** \n")
+						escreva("**                                                         ** \n")
+						escreva("************************************************************* \n")
+						leia(opcao)
+
+						se(opcao == "1" ou opcao == "2"  ou opcao == "3"){
+							opcaoInt = t.cadeia_para_inteiro(opcao, 10)
+							pare
+						}
+						senao{
+							escreva("Valor informado está errado!\n")
+						}
+				 }
+
+					escolha(opcaoInt){
+						caso 1:
+							 VendaAnimais()
+						pare
+						caso 2:
+							VendaAlimento()
+						pare
+						caso 3:
+							VendaSemente()
+						pare
+					}
+	}//funcao Venda
+
+	funcao VendaAnimais(){
+
+		enquanto(opcao != "1" ou opcao != "2" ou opcao != "3" ou opcao != "4"){
+						escreva("************************************************************* \n")
+						escreva("**                                                         ** \n")
+						escreva("**             Escolha um animal para vender:              ** \n")
+						escreva("**                                                         ** \n")
+						escreva("**                    1_ Vaca                              ** \n")
+						escreva("**                                                         ** \n")
+						escreva("**                    2_ Touro                             ** \n")
+						escreva("**                                                         ** \n")
+						escreva("**                    3_ Jegue                             ** \n")
+						escreva("**                                                         ** \n")
+						escreva("**                    4_ Jumenta                           ** \n")
+						escreva("**                                                         ** \n")
+						escreva("************************************************************* \n")
+						leia(opcao)
+
+						se(opcao == "1" ou opcao == "2"  ou opcao == "3"  ou opcao == "4"){
+								opcaoInt = t.cadeia_para_inteiro(opcao, 10)
+								pare
+							}
+							senao{
+								escreva("Valor informado está errado!\n")
+							}
+					 }
+					
+					escolha(opcaoInt){
+						caso 1:
+							AbreviarVenda(valor_vaca, vaca)
+						pare
+						
+						caso 2:
+							AbreviarVenda(valor_touro, touro)
+						pare
+						
+						caso 3:
+							AbreviarVenda(valor_jegue, jegue)
+						pare
+												
+						caso 4:
+							AbreviarVenda(valor_jumenta, jumenta)
+						pare
+					}// fim da escolha animal
+		
+	}//funcao VendaAnimais
+
+	funcao VendaAlimento(){
+
+		enquanto(opcao != "1" ou opcao != "2" ou opcao != "3" ou opcao != "4" ou opcao != "5" ou opcao != "6" ou opcao != "7" ou opcao != "8" ou opcao != "9" ou opcao != "10" ou opcao != "11" ou opcao != "12"){
+						escreva("************************************************************* \n")
+						escreva("**                                                         ** \n")
+						escreva("**            Escolha um alimento para vender:             ** \n")
+						escreva("**                                                         ** \n")
+						escreva("**                 1_ Carne de Gato                        ** \n")
+						escreva("**                                                         ** \n")
+						escreva("**                2_ Carne de Cachorro                     ** \n")
+						escreva("**                                                         ** \n")
+						escreva("**                  3_ Carne de Boi                        ** \n")
+						escreva("**                                                         ** \n")
+						escreva("**                    4_ Verduras                          ** \n")
+						escreva("**                                                         ** \n")
+						escreva("**                     5_ Frutas                           ** \n")
+						escreva("**                                                         ** \n")
+						escreva("**                     6_ Cereais                          ** \n")
+						escreva("**                                                         ** \n")
+						escreva("**                      7_ Água                            ** \n")
+						escreva("**                                                         ** \n")
+						escreva("**                     8_ Leite                            ** \n")
+						escreva("**                                                         ** \n")
+						escreva("**                      9_ Suco                            ** \n")
+						escreva("**                                                         ** \n")
+						escreva("**               10_ Ração Barata (3 Dias)                 ** \n")
+						escreva("**                                                         ** \n")
+						escreva("**                11_ Ração Média (5 Dias)                 ** \n")
+						escreva("**                                                         ** \n")
+						escreva("**                 12_ Ração Cara (7 Dias)                 ** \n")
+						escreva("**                                                         ** \n")
+						escreva("************************************************************* \n")
+						leia(opcao)
+						
+						se(opcao == "1" ou opcao == "2" ou opcao == "3" ou opcao == "4" ou opcao == "5" ou opcao == "6" ou opcao == "7" ou opcao == "8" ou opcao == "9" ou opcao == "10" ou opcao == "11" ou opcao == "12"){
+							opcaoInt = t.cadeia_para_inteiro(opcao, 10)
+						}
+						senao{
+							escreva("Valor informado está errado!\n")
+						}
+					}
+
+					escolha(opcaoInt){
+						caso 1:
+							AbreviarVenda(valor__carne_de_gato, carne_de_gato)
+						pare
+						
+						caso 2:
+							AbreviarVenda(valor__carne_de_cachorro, carne_de_cachorro)
+						pare
+						
+						caso 3:
+							AbreviarVenda(valor__carne_de_boi, carne_de_boi)
+						pare
+						
+						caso 4:
+							AbreviarVenda(valor_verduras, verduras)
+						pare
+						
+						caso 5:
+							AbreviarVenda(valor_frutas, frutas)
+						pare
+						
+						caso 7:
+							AbreviarVenda(valor_agua, agua)
+						pare
+						
+						caso 8:
+							AbreviarVenda(valor_leite, leite)
+						pare
+						
+						caso 9:
+							AbreviarVenda(valor_suco, suco)
+						pare
+						
+						
+						caso 10:
+							AbreviarVenda(valor__racao_barata, racao_barata)
+						pare
+						
+						caso 11:
+							AbreviarVenda(valor__racao_media, racao_media)
+						pare
+						
+						
+						caso 12:
+							AbreviarVenda(valor__racao_cara, racao_cara)
+						pare					
+					}//escolha alimento
+		
+	}//funcao VendaAlimento
+
+	funcao VendaSemente(){
+		
+	}//funcao VendaSemente
+
+	funcao Animais(){
 				enquanto(opcao != "1" ou opcao != "2" ou opcao != "3" ou opcao != "4"){
 					limpa()
 					escreva("************************************************************* \n")
@@ -520,7 +698,8 @@ programa
 					
 					}//administrar animais
 		}//funcao Animais
-		funcao AbreviarMercado(real x, inteiro y){
+
+	funcao AbreviarMercado(real x, inteiro y){
 
                escreva("Quantos animais você deseja comprar? \n")
 			leia(quantidade)
@@ -546,6 +725,7 @@ programa
 					se(quantidade * x <= dinheiro){
 						limpa()
 						y = y + quantidade
+						dinheiro = dinheiro - (quantidade * x)
 						escreva("Compra realizada com sucesso!\n")
 						u.aguarde(2000)
 					}
@@ -562,5 +742,49 @@ programa
 					}//fim escolha compra
 		
 		}//funcao AbreviarMercado
+
+	funcao AbreviarVenda(real x, inteiro y){
+
+			escreva("Quantos animais você deseja vender? \n")
+			leia(quantidade)
+			escreva("Venda reultará em: ", quantidade * x)
+			escreva("\n Deseja comprar? \n")
+			escreva("1_  sim \n")
+			escreva("2_  não \n")
+			leia(opcao)
+			
+			enquanto(opcao != "1" ou opcao != "2"){
+				se(opcao == "1" ou opcao == "2"){
+					opcaoInt = t.cadeia_para_inteiro(opcao, 10)
+				pare
+				}
+				senao{
+					escreva("Valor informado está errado!\n")
+				}
+			}
+			
+			
+			escolha(opcaoInt){
+				caso 1:
+					se(quantidade >= x){
+						limpa()
+						y = y - quantidade
+						dinheiro = dinheiro + (quantidade * x)
+						escreva("Venda realizada com sucesso!\n")
+						u.aguarde(2000)
+					}
+					senao{
+						limpa()
+						escreva("Venda negada\n")
+						u.aguarde(2000)
+					}
+					pare
+				caso 2:
+					limpa()
+					escreva("Venda negada\n")
+					u.aguarde(2000)
+					}//fim escolha compra
+		
+		}//funcao AbreviarVenda
 //programa 
 }
