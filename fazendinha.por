@@ -8,7 +8,7 @@ programa
 	inteiro numeroDias = 0
 	cadeia opcao = "0"
 	inteiro opcaoInt
-	inteiro dinheiro = 0
+	real dinheiro = 0.0
 	inteiro quantidade
 					
 
@@ -25,28 +25,28 @@ programa
      //Alimentos e preços
      inteiro leite = 0
      real valor_leite = 0.0
-     inteiro carne_de_gato
+     inteiro carne_de_gato = 0
      real valor__carne_de_gato = 0.0
-     inteiro carne_de_cachorro
+     inteiro carne_de_cachorro = 0
      real valor__carne_de_cachorro = 0.0
-     inteiro carne_de_boi
+     inteiro carne_de_boi = 0
      real valor__carne_de_boi = 0.0
-     inteiro verduras
+     inteiro verduras = 0
      real valor_verduras = 0.0
-     inteiro frutas
+     inteiro frutas = 0
      real valor_frutas = 0.0
-     inteiro cereais
+     inteiro cereais = 0
      real valor_cereais = 0.0
-     inteiro agua
+     inteiro agua = 0
      real valor_agua = 0.0
-     inteiro suco
+     inteiro suco = 0
      real valor_suco = 0.0
      //Rações
-     inteiro racao_barata
+     inteiro racao_barata = 0
      real valor__racao_barata = 0.0
-     inteiro racao_media 
+     inteiro racao_media  = 0
      real valor__racao_media = 0.0
-     inteiro racao_cara
+     inteiro racao_cara = 0
      real valor__racao_cara = 0.0
 
      //Produção
@@ -146,6 +146,7 @@ programa
 
 				caso 2: //add
 					Animais()
+				pare
 				
 			}//escolha açoes do dia
 										
@@ -182,8 +183,10 @@ programa
 							 MercadoAnimais()
 						pare
 						caso 2:
+							MercadoAllimento()
 						pare
 						caso 3:
+							MercadoSemente()
 						pare
 					}
 	}
@@ -216,164 +219,21 @@ programa
 					
 					escolha(opcaoInt){
 						caso 1:
-							escreva("Quantos animais você deseja comprar? \n")
-							leia(quantidade)
-							escreva("Compra reultará em: ", quantidade * valor_vaca)
-							escreva("\n Deseja comprar? \n")
-							escreva("1_  sim \n")
-							escreva("2_  não \n")
-							leia(opcao)
-							
-							enquanto(opcao != "1" ou opcao != "2"){
-								se(opcao == "1" ou opcao == "2"){
-									opcaoInt = t.cadeia_para_inteiro(opcao, 10)
-									pare
-								}
-								senao{
-									escreva("Valor informado está errado!\n")
-								}
-							}
-							
-							escolha(opcaoInt){
-								caso 1:
-									se(quantidade * valor_vaca <= dinheiro){
-										limpa()
-										escreva("Compra realizada com sucesso!\n")
-										u.aguarde(2000)															
-									}
-									senao{
-										limpa()
-										escreva("Compra negada\n")
-										u.aguarde(2000)
-									}
-								pare
-								caso 2:
-									limpa()
-									escreva("Compra negada\n")
-									u.aguarde(2000)
-								pare
-							}//fim escolha compra
+							AbreviarMercado(valor_vaca, vaca)
 						pare
+						
 						caso 2:
-							escreva("Quantos animais você deseja comprar? \n")
-							leia(quantidade)
-							escreva("Compra reultará em: ", quantidade * valor_touro)
-							escreva("\n Deseja comprar? \n")
-							escreva("1_  sim \n")
-							escreva("2_  não \n")
-							leia(opcao)
-							
-							enquanto(opcao != "1" ou opcao != "2"){
-								se(opcao == "1" ou opcao == "2"){
-									opcaoInt = t.cadeia_para_inteiro(opcao, 10)
-									pare
-								}
-								senao{
-									escreva("Valor informado está errado!\n")
-								}
-							}
-							
-							
-							escolha(opcaoInt){
-								caso 1:
-									se(quantidade * valor_touro <= dinheiro){
-										limpa()
-										escreva("Compra realizada com sucesso!\n")
-										u.aguarde(2000)															
-									}
-									senao{
-										limpa()
-										escreva("Compra negada\n")
-										u.aguarde(2000)
-									}
-								pare
-								caso 2:
-									limpa()
-									escreva("Compra negada\n")
-									u.aguarde(2000)
-								pare
-							}//fim escolha compra
+							AbreviarMercado(valor_touro, touro)
 						pare
+						
 						caso 3:
-							escreva("Quantos animais você deseja comprar? \n")
-							leia(quantidade)
-							escreva("Compra reultará em: ", quantidade * valor_jegue)
-							escreva("\n Deseja comprar? \n")
-							escreva("1_  sim \n")
-							escreva("2_  não \n")
-							leia(opcao)
-
-							enquanto(opcao != "1" ou opcao != "2"){
-								se(opcao == "1" ou opcao == "2"){
-									opcaoInt = t.cadeia_para_inteiro(opcao, 10)
-									pare
-								}
-								senao{
-									escreva("Valor informado está errado!\n")
-								}
-							}
-							
-							
-							escolha(opcaoInt){
-								caso 1:
-									se(quantidade * valor_jegue <= dinheiro){
-										limpa()
-										escreva("Compra realizada com sucesso!\n")
-										u.aguarde(2000)															
-									}
-									senao{
-										limpa()
-										escreva("Compra negada\n")
-										u.aguarde(2000)
-									}
-								pare
-								caso 2:
-									limpa()
-									escreva("Compra negada\n")
-									u.aguarde(2000)
-								pare
-							}//fim escolha compra
+							AbreviarMercado(valor_jegue, jegue)
 						pare
+												
 						caso 4:
-							escreva("Quantos animais você deseja comprar? \n")
-							leia(quantidade)
-							escreva("Compra reultará em: ", quantidade * valor_jumenta)
-							escreva("\n Deseja comprar? \n")
-							escreva("1_  sim \n")
-							escreva("2_  não \n")
-							leia(opcao)
-
-							enquanto(opcao != "1" ou opcao != "2"){
-								se(opcao == "1" ou opcao == "2"){
-									opcaoInt = t.cadeia_para_inteiro(opcao, 10)
-									pare
-								}
-								senao{
-									escreva("Valor informado está errado!\n")
-								}
-							}
-							
-							
-							escolha(opcaoInt){
-								caso 1:
-									se(quantidade * valor_jumenta <= dinheiro){
-										limpa()
-										escreva("Compra realizada com sucesso!\n")
-										u.aguarde(2000)															
-									}
-									senao{
-										limpa()
-										escreva("Compra negada\n")
-										u.aguarde(2000)
-									}
-										pare
-								caso 2:
-									limpa()
-									escreva("Compra negada\n")
-									u.aguarde(2000)
+							AbreviarMercado(valor_jumenta, jumenta)
 						pare
-							}//fim escolha compra
-				}// fim da escolha animal
+					}// fim da escolha animal
 	} //fim da funcao MercadoAnimais
 
 	funcao MercadoAllimento(){
@@ -419,473 +279,50 @@ programa
 
 					escolha(opcaoInt){
 						caso 1:
-							escreva("Quantas Carnes de Gato você deseja comprar? \n")
-							leia(quantidade)
-							escreva("Compra reultará em: ", quantidade * valor__carne_de_gato)
-							escreva("\n Deseja comprar? \n")
-							escreva("1_  sim \n")
-							escreva("2_  não \n")
-							leia(opcao)
-
-							enquanto(opcao != "1" ou opcao != "2"){
-								se(opcao == "1" ou opcao == "2"){
-									opcaoInt = t.cadeia_para_inteiro(opcao, 10)
-									pare
-								}
-								senao{
-									escreva("Valor informado está errado!\n")
-								}
-							}
-							
-							
-							escolha(opcaoInt){
-								caso 1:
-									se(quantidade * valor__carne_de_gato <= dinheiro){
-										limpa()
-										escreva("Compra realizada com sucesso!\n")	
-										u.aguarde(2000)														
-									}
-									senao{
-										limpa()
-										escreva("Compra negada\n")
-										u.aguarde(2000)
-									}
-								pare
-								caso 2:
-									limpa()
-									escreva("Compra negada\n")
-									u.aguarde(2000)
-								pare
-							}//fim escolha compra
+							AbreviarMercado(valor__carne_de_gato, carne_de_gato)
+						pare
+						
 						caso 2:
-							escreva("Quantos animais você deseja comprar? \n")
-							leia(quantidade)
-							escreva("Compra reultará em: ", quantidade * valor__carne_de_cachorro)
-							escreva("\n Deseja comprar? \n")
-							escreva("1_  sim \n")
-							escreva("2_  não \n")
-							leia(opcao)
-
-							enquanto(opcao != "1" ou opcao != "2"){
-								se(opcao == "1" ou opcao == "2"){
-									opcaoInt = t.cadeia_para_inteiro(opcao, 10)
-									pare
-								}
-								senao{
-									escreva("Valor informado está errado!\n")
-								}
-							}
-							
-							
-							escolha(opcaoInt){
-								caso 1:
-									se(quantidade * valor__carne_de_cachorro <= dinheiro){
-										limpa()
-										escreva("Compra realizada com sucesso!\n")	
-										u.aguarde(2000)														
-									}
-									senao{
-										limpa()
-										escreva("Compra negada\n")
-										u.aguarde(2000)
-									}
-								pare
-								caso 2:
-									limpa()
-									escreva("Compra negada\n")
-									u.aguarde(2000)
-								pare
-							}//fim escolha compra
+							AbreviarMercado(valor__carne_de_cachorro, carne_de_cachorro)
+						pare
+						
 						caso 3:
-							escreva("Quantos animais você deseja comprar? \n")
-							leia(quantidade)
-							escreva("Compra reultará em: ", quantidade * valor__carne_de_boi)
-							escreva("\n Deseja comprar? \n")
-							escreva("1_  sim \n")
-							escreva("2_  não \n")
-							leia(opcao)
-
-							enquanto(opcao != "1" ou opcao != "2"){
-								se(opcao == "1" ou opcao == "2"){
-									opcaoInt = t.cadeia_para_inteiro(opcao, 10)
-									pare
-								}
-								senao{
-									escreva("Valor informado está errado!\n")
-								}
-							}
-							
-							
-							escolha(opcaoInt){
-								caso 1:
-									se(quantidade * valor__carne_de_boi <= dinheiro){
-										limpa()
-										escreva("Compra realizada com sucesso!\n")	
-										u.aguarde(2000)														
-									}
-									senao{
-										limpa()
-										escreva("Compra negada\n")
-										u.aguarde(2000)
-									}
-								pare
-								caso 2:
-									limpa()
-									escreva("Compra negada\n")
-									u.aguarde(2000)
-								pare
-							}//fim escolha compra
+							AbreviarMercado(valor__carne_de_boi, carne_de_boi)
+						pare
+						
 						caso 4:
-							escreva("Quantos animais você deseja comprar? \n")
-							leia(quantidade)
-							escreva("Compra reultará em: ", quantidade * valor_verduras)
-							escreva("\n Deseja comprar? \n")
-							escreva("1_  sim \n")
-							escreva("2_  não \n")
-							leia(opcao)
-
-							enquanto(opcao != "1" ou opcao != "2"){
-								se(opcao == "1" ou opcao == "2"){
-									opcaoInt = t.cadeia_para_inteiro(opcao, 10)
-									pare
-								}
-								senao{
-									escreva("Valor informado está errado!\n")
-								}
-							}
-							
-							
-							escolha(opcaoInt){
-								caso 1:
-									se(quantidade * valor_verduras <= dinheiro){
-										limpa()
-										escreva("Compra realizada com sucesso!\n")	
-										u.aguarde(2000)														
-									}
-									senao{
-										limpa()
-										escreva("Compra negada\n")
-										u.aguarde(2000)
-									}
-								pare
-								caso 2:
-									limpa()
-									escreva("Compra negada\n")
-									u.aguarde(2000)
-								pare
-							}//fim escolha compra
+							AbreviarMercado(valor_verduras, verduras)
+						pare
+						
 						caso 5:
-							escreva("Quantos animais você deseja comprar? \n")
-							leia(quantidade)
-							escreva("Compra reultará em: ", quantidade * valor_frutas)
-							escreva("\n Deseja comprar? \n")
-							escreva("1_  sim \n")
-							escreva("2_  não \n")
-							leia(opcao)
-
-							enquanto(opcao != "1" ou opcao != "2"){
-								se(opcao == "1" ou opcao == "2"){
-									opcaoInt = t.cadeia_para_inteiro(opcao, 10)
-									pare
-								}
-								senao{
-									escreva("Valor informado está errado!\n")
-								}
-							}
-							
-							
-							escolha(opcaoInt){
-								caso 1:
-									se(quantidade * valor_frutas <= dinheiro){
-										limpa()
-										escreva("Compra realizada com sucesso!\n")
-										u.aguarde(2000)															
-									}
-									senao{
-										limpa()
-										escreva("Compra negada\n")
-										u.aguarde(2000)
-									}
-								pare
-								caso 2:
-									limpa()
-									escreva("Compra negada\n")
-									u.aguarde(2000)
-								pare
-							}//fim escolha compra
-						caso 6:
-							escreva("Quantos animais você deseja comprar? \n")
-							leia(quantidade)
-							escreva("Compra reultará em: ", quantidade * valor_cereais)
-							escreva("\n Deseja comprar? \n")
-							escreva("1_  sim \n")
-							escreva("2_  não \n")
-							leia(opcao)
-
-							enquanto(opcao != "1" ou opcao != "2"){
-								se(opcao == "1" ou opcao == "2"){
-									opcaoInt = t.cadeia_para_inteiro(opcao, 10)
-									pare
-								}
-								senao{
-									escreva("Valor informado está errado!\n")
-								}
-							}
-							
-							
-							escolha(opcaoInt){
-								caso 1:
-									se(quantidade * valor_cereais <= dinheiro){
-										limpa()
-										escreva("Compra realizada com sucesso!\n")
-										u.aguarde(2000)															
-									}
-									senao{
-										limpa()
-										escreva("Compra negada\n")
-										u.aguarde(2000)
-									}
-								pare
-								caso 2:
-									limpa()
-									escreva("Compra negada\n")
-									u.aguarde(2000)
-								pare
-							}//fim escolha compra
+							AbreviarMercado(valor_frutas, frutas)
+						pare
+						
 						caso 7:
-							escreva("Quantos animais você deseja comprar? \n")
-							leia(quantidade)
-							escreva("Compra reultará em: ", quantidade *valor_agua)
-							escreva("\n Deseja comprar? \n")
-							escreva("1_  sim \n")
-							escreva("2_  não \n")
-							leia(opcao)
-
-							enquanto(opcao != "1" ou opcao != "2"){
-								se(opcao == "1" ou opcao == "2"){
-									opcaoInt = t.cadeia_para_inteiro(opcao, 10)
-									pare
-								}
-								senao{
-									escreva("Valor informado está errado!\n")
-								}
-							}
-							
-							
-							escolha(opcaoInt){
-								caso 1:
-									se(quantidade * valor_agua <= dinheiro){
-										limpa()
-										escreva("Compra realizada com sucesso!\n")
-										u.aguarde(2000)															
-									}
-									senao{
-										limpa()
-										escreva("Compra negada\n")
-										u.aguarde(2000)
-									}
-								pare
-								caso 2:
-									limpa()
-									escreva("Compra negada\n")
-									u.aguarde(2000)
-								pare
-							}//fim escolha compra
+							AbreviarMercado(valor_agua, agua)
+						pare
+						
 						caso 8:
-							escreva("Quantos animais você deseja comprar? \n")
-							leia(quantidade)
-							escreva("Compra reultará em: ", quantidade * valor_leite)
-							escreva("\n Deseja comprar? \n")
-							escreva("1_  sim \n")
-							escreva("2_  não \n")
-							leia(opcao)
-
-							enquanto(opcao != "1" ou opcao != "2"){
-								se(opcao == "1" ou opcao == "2"){
-									opcaoInt = t.cadeia_para_inteiro(opcao, 10)
-									pare
-								}
-								senao{
-									escreva("Valor informado está errado!\n")
-								}
-							}
-							
-							
-							escolha(opcaoInt){
-								caso 1:
-									se(quantidade * valor_leite <= dinheiro){
-										limpa()
-										escreva("Compra realizada com sucesso!")	
-										u.aguarde(2000)														
-									}
-									senao{
-										limpa()
-										escreva("Compra negada\n")
-										u.aguarde(2000)
-									}
-								pare
-								caso 2:
-									limpa()
-									escreva("Compra negada\n")
-									u.aguarde(2000)
-								pare
-							}//fim escolha compra
+							AbreviarMercado(valor_leite, leite)
+						pare
+						
 						caso 9:
-							escreva("Quantos animais você deseja comprar? \n")
-							leia(quantidade)
-							escreva("Compra reultará em: ", quantidade * valor_suco)
-							escreva("\n Deseja comprar? \n")
-							escreva("1_  sim \n")
-							escreva("2_  não \n")
-							leia(opcao)
-
-							enquanto(opcao != "1" ou opcao != "2"){
-								se(opcao == "1" ou opcao == "2"){
-									opcaoInt = t.cadeia_para_inteiro(opcao, 10)
-									pare
-								}
-								senao{
-									escreva("Valor informado está errado!\n")
-								}
-							}
-							
-							
-							escolha(opcaoInt){
-								caso 1:
-									se(quantidade * valor_suco <= dinheiro){
-										limpa()
-										escreva("Compra realizada com sucesso!\n")
-										u.aguarde(2000)															
-									}
-									senao{
-										limpa()
-										escreva("Compra negada\n")
-										u.aguarde(2000)
-									}
-								pare
-								caso 2:
-									limpa()
-									escreva("Compra negada\n")
-									u.aguarde(2000)
-								pare
-							}//fim escolha compra
+							AbreviarMercado(valor_suco, suco)
+						pare
+						
+						
 						caso 10:
-							escreva("Quantos animais você deseja comprar? \n")
-							leia(quantidade)
-							escreva("Compra reultará em: ", quantidade * valor__racao_barata)
-							escreva("\n Deseja comprar? \n")
-							escreva("1_  sim \n")
-							escreva("2_  não \n")
-							leia(opcao)
-
-							enquanto(opcao != "1" ou opcao != "2"){
-								se(opcao == "1" ou opcao == "2"){
-									opcaoInt = t.cadeia_para_inteiro(opcao, 10)
-									pare
-								}
-								senao{
-									escreva("Valor informado está errado!\n")
-								}
-							}
-							
-							
-							escolha(opcaoInt){
-								caso 1:
-									se(quantidade * valor__racao_barata <= dinheiro){
-										limpa()
-										escreva("Compra realizada com sucesso!\n")
-										u.aguarde(2000)															
-									}
-									senao{
-										limpa()
-										escreva("Compra negada\n")
-										u.aguarde(2000)
-									}
-								pare
-								caso 2:
-									limpa()
-									escreva("Compra negada\n")
-									u.aguarde(2000)
-								pare
-							}//fim escolha compra
+							AbreviarMercado(valor__racao_barata, racao_barata)
+						pare
+						
 						caso 11:
-							escreva("Quantos animais você deseja comprar? \n")
-							leia(quantidade)
-							escreva("Compra reultará em: ", quantidade * valor__racao_media)
-							escreva("\n Deseja comprar? \n")
-							escreva("1_  sim \n")
-							escreva("2_  não \n")
-							leia(opcao)
-
-							enquanto(opcao != "1" ou opcao != "2"){
-								se(opcao == "1" ou opcao == "2"){
-									opcaoInt = t.cadeia_para_inteiro(opcao, 10)
-									pare
-								}
-								senao{
-									escreva("Valor informado está errado!\n")
-								}
-							}
-							
-							
-							escolha(opcaoInt){
-								caso 1:
-									se(quantidade * valor__racao_media <= dinheiro){
-										limpa()
-										escreva("Compra realizada com sucesso!\n")	
-										u.aguarde(2000)														
-									}
-									senao{
-										limpa()
-										escreva("Compra negada\n")
-										u.aguarde(2000)
-									}
-								pare
-								caso 2:
-									limpa()
-									escreva("Compra negada\n")
-									u.aguarde(2000)
-								pare
-							}//fim escolha compra
+							AbreviarMercado(valor__racao_media, racao_media)
+						pare
+						
+						
 						caso 12:
-							escreva("Quantos animais você deseja comprar? \n")
-							leia(quantidade)
-							escreva("Compra reultará em: ", quantidade * valor__racao_cara)
-							escreva("\n Deseja comprar? \n")
-							escreva("1_  sim \n")
-							escreva("2_  não \n")
-							leia(opcao)
-
-							enquanto(opcao != "1" ou opcao != "2"){
-								se(opcao == "1" ou opcao == "2"){
-									opcaoInt = t.cadeia_para_inteiro(opcao, 10)
-									pare
-								}
-								senao{
-									escreva("Valor informado está errado!\n")
-								}
-							}
-							
-							
-							escolha(opcaoInt){
-								caso 1:
-									se(quantidade * valor__racao_cara <= dinheiro){
-										limpa()
-										escreva("Compra realizada com sucesso!\n")	
-										u.aguarde(2000)														
-									}
-									senao{
-										limpa()
-										escreva("Compra negada\n")
-										u.aguarde(2000)
-									}
-								pare
-								caso 2:
-									limpa()
-									escreva("Compra negada\n")
-									u.aguarde(2000)
-								pare
-							}//fim escolha compra					
+							AbreviarMercado(valor__racao_cara, racao_cara)
+						pare					
 					}//escolha alimentos
 	}//fim mercado alimento
 
@@ -1083,5 +520,47 @@ programa
 					
 					}//administrar animais
 		}//funcao Animais
+		funcao AbreviarMercado(real x, inteiro y){
+
+               escreva("Quantos animais você deseja comprar? \n")
+			leia(quantidade)
+			escreva("Compra reultará em: ", quantidade * x)
+			escreva("\n Deseja comprar? \n")
+			escreva("1_  sim \n")
+			escreva("2_  não \n")
+			leia(opcao)
+			
+			enquanto(opcao != "1" ou opcao != "2"){
+				se(opcao == "1" ou opcao == "2"){
+					opcaoInt = t.cadeia_para_inteiro(opcao, 10)
+				pare
+				}
+				senao{
+					escreva("Valor informado está errado!\n")
+				}
+			}
+			
+			
+			escolha(opcaoInt){
+				caso 1:
+					se(quantidade * x <= dinheiro){
+						limpa()
+						y = y + quantidade
+						escreva("Compra realizada com sucesso!\n")
+						u.aguarde(2000)
+					}
+					senao{
+						limpa()
+						escreva("Compra negada\n")
+						u.aguarde(2000)
+					}
+					pare
+				caso 2:
+					limpa()
+					escreva("Compra negada\n")
+					u.aguarde(2000)
+					}//fim escolha compra
+		
+		}//funcao AbreviarMercado
 //programa 
 }
