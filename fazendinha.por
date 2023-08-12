@@ -8,8 +8,11 @@ programa
 	inteiro numeroDias = 0
 	cadeia opcao = "0"
 	inteiro opcaoInt
-	real dinheiro = 0.0
 	inteiro quantidade
+	inteiro energia = 100
+	inteiro dormir = 0
+	real dinheiro = 0.0
+	
 					
 
      //Animais e preços
@@ -41,6 +44,7 @@ programa
      real valor_agua = 0.0
      inteiro suco = 0
      real valor_suco = 0.0
+     
      //Rações
      inteiro racao_barata = 0
      real valor__racao_barata = 0.0
@@ -94,6 +98,8 @@ programa
 		para(numeroDias = numeroDias; numeroDias <= 100; numeroDias++){
 
 			time_leite = 0
+			energia = 100
+			dormir = 0
 				
 			se (numeroDias == 0 ){
 				limpa()
@@ -114,39 +120,54 @@ programa
 				limpa()
 				
 			}//se
-			 enquanto(opcao != "1" ou opcao != "2"){
-				escreva("************************************************************* \n")
-				escreva("**                                                         ** \n")
-				escreva("**               O que deseja fazer hoje?                  ** \n")
-				escreva("**                                                         ** \n")
-				escreva("**                   Escolha uma opção:                    ** \n")
-				escreva("**                                                         ** \n")
-				escreva("**                    1_ Mercado                           ** \n")
-				escreva("**                                                         ** \n")
-				escreva("**                    2_ Animais                           ** \n")
-				escreva("**                                                         ** \n")
-				escreva("************************************************************* \n")
-				leia(opcao)
-
+			enquanto(energia > 0 e dormir == 0){
+				enquanto(opcao != "1" ou opcao != "2" ou opcao != "3" ou opcao != "4"){
+					escreva("************************************************************* \n")
+					escreva("**                                                         ** \n")
+					escreva("**               O que deseja fazer hoje?                  ** \n")
+					escreva("**                                                         ** \n")
+					escreva("**                   Escolha uma opção:                    ** \n")
+					escreva("**                                                         ** \n")
+					escreva("**                    1_ Mercado                           ** \n")
+					escreva("**                                                         ** \n")
+					escreva("**                    2_ Animais                           ** \n")
+					escreva("**                                                         ** \n")
+					escreva("**                    3_ Consumir Alimentos                ** \n")
+					escreva("**                                                         ** \n")
+					escreva("**                    4_ Dormir                            ** \n")
+					escreva("**                                                         ** \n")
+					escreva("************************************************************* \n")
+					leia(opcao)
+	
+					
+					se(opcao == "1" ou opcao == "2" ou opcao == "3" ou opcao == "4"){
+							opcaoInt = t.cadeia_para_inteiro(opcao, 10)
+							pare
+						}
+						senao{
+							escreva("Valor informado está errado!\n")
+						}
+				 }
+				escolha(opcaoInt){
+					caso 1:
+						MercadoAnimais()
+					pare
+	
+					caso 2:
+						Animais()
+					pare
+	
+					caso 3:
+						
+					pare
+					
+					caso 4:
+						dormir = 1
+					pare
+					
+				}//escolha açoes do dia
 				
-				se(opcao == "1" ou opcao == "2"){
-						opcaoInt = t.cadeia_para_inteiro(opcao, 10)
-						pare
-					}
-					senao{
-						escreva("Valor informado está errado!\n")
-					}
-			 }
-			escolha(opcaoInt){
-				caso 1:
-					MercadoAnimais()
-				pare
-
-				caso 2: //add
-					Animais()
-				pare
-				
-			}//escolha açoes do dia
+			}//energia
 										
 		}//para
 	
@@ -238,7 +259,7 @@ programa
 					enquanto(opcao != "1" ou opcao != "2" ou opcao != "3" ou opcao != "4" ou opcao != "5" ou opcao != "6" ou opcao != "7" ou opcao != "8" ou opcao != "9" ou opcao != "10" ou opcao != "11" ou opcao != "12"){
 						escreva("************************************************************* \n")
 						escreva("**                                                         ** \n")
-						escreva("**           Escolha um alimentol para comprar:            ** \n")
+						escreva("**           Escolha um alimento para comprar:             ** \n")
 						escreva("**                                                         ** \n")
 						escreva("**                 1_ Carne de Gato                        ** \n")
 						escreva("**                                                         ** \n")
@@ -699,6 +720,78 @@ programa
 					}//administrar animais
 		}//funcao Animais
 
+	funcao ConsumirAlimentos(){
+
+		enquanto(opcao != "1" ou opcao != "2" ou opcao != "3" ou opcao != "4" ou opcao != "5" ou opcao != "6" ou opcao != "7" ou opcao != "8" ou opcao != "9"){
+						escreva("************************************************************* \n")
+						escreva("**                                                         ** \n")
+						escreva("**           Escolha um alimento para ingerir:             ** \n")
+						escreva("**                                                         ** \n")
+						escreva("**                 1_ Carne de Gato                        ** \n")
+						escreva("**                                                         ** \n")
+						escreva("**                2_ Carne de Cachorro                     ** \n")
+						escreva("**                                                         ** \n")
+						escreva("**                  3_ Carne de Boi                        ** \n")
+						escreva("**                                                         ** \n")
+						escreva("**                    4_ Verduras                          ** \n")
+						escreva("**                                                         ** \n")
+						escreva("**                     5_ Frutas                           ** \n")
+						escreva("**                                                         ** \n")
+						escreva("**                     6_ Cereais                          ** \n")
+						escreva("**                                                         ** \n")
+						escreva("**                      7_ Água                            ** \n")
+						escreva("**                                                         ** \n")
+						escreva("**                     8_ Leite                            ** \n")
+						escreva("**                                                         ** \n")
+						escreva("**                      9_ Suco                            ** \n")
+						escreva("**                                                         ** \n")
+						escreva("************************************************************* \n")
+						leia(opcao)
+						
+						se(opcao == "1" ou opcao == "2" ou opcao == "3" ou opcao == "4" ou opcao == "5" ou opcao == "6" ou opcao == "7" ou opcao == "8" ou opcao == "9"){
+							opcaoInt = t.cadeia_para_inteiro(opcao, 10)
+						}
+						senao{
+							escreva("Valor informado está errado!\n")
+						}
+					}
+
+					escolha(opcaoInt){
+						caso 1:
+							AbreviarConsumo(100, carne_de_gato)
+						pare
+						
+						caso 2:
+							AbreviarConsumo(150, carne_de_cachorro)
+						pare
+						
+						caso 3:
+							AbreviarConsumo(200, carne_de_boi)
+						pare
+						
+						caso 4:
+							AbreviarConsumo(75, verduras)
+						pare
+						
+						caso 5:
+							AbreviarConsumo(60, frutas)
+						pare
+						
+						caso 7:
+							AbreviarConsumo(50, agua)
+						pare
+						
+						caso 8:
+							AbreviarConsumo(55, leite)
+						pare
+						
+						caso 9:
+							AbreviarConsumo(50, suco)
+						pare				
+					}//escolha alimentos
+		
+	}// funcao ConsumirAlimentos
+
 	funcao AbreviarMercado(real x, inteiro y){
 
                escreva("Quantos animais você deseja comprar? \n")
@@ -722,11 +815,17 @@ programa
 			
 			escolha(opcaoInt){
 				caso 1:
-					se(quantidade * x <= dinheiro){
+					se(quantidade * x <= dinheiro e energia >= 15){
 						limpa()
 						y = y + quantidade
+						energia = energia - 15
 						dinheiro = dinheiro - (quantidade * x)
 						escreva("Compra realizada com sucesso!\n")
+						u.aguarde(2000)
+					}
+					senao se(energia < 15){
+						limpa()
+						escreva("Compra negada, energia baixa!\n")
 						u.aguarde(2000)
 					}
 					senao{
@@ -766,22 +865,73 @@ programa
 			
 			escolha(opcaoInt){
 				caso 1:
-					se(quantidade >= x){
+					se(quantidade >= x e energia >= 15){
 						limpa()
 						y = y - quantidade
+						energia = energia - 15
 						dinheiro = dinheiro + (quantidade * x)
 						escreva("Venda realizada com sucesso!\n")
 						u.aguarde(2000)
 					}
+					senao se(energia < 15){
+						limpa()
+						escreva("Compra negada, energia baixa!\n")
+						u.aguarde(2000)
+					}
 					senao{
 						limpa()
-						escreva("Venda negada\n")
+						escreva("Compra negada\n")
 						u.aguarde(2000)
 					}
 					pare
 				caso 2:
 					limpa()
 					escreva("Venda negada\n")
+					u.aguarde(2000)
+					}//fim escolha compra
+		
+		}//funcao AbreviarVenda
+	
+	funcao AbreviarConsumo(inteiro x, inteiro y){
+
+			escreva("Quantos deste alimento você deseja consumir?? \n")
+			leia(quantidade)
+			escreva("Consumo reultará em: ", y)
+			escreva("\n Deseja consumir? \n")
+			escreva("1_  sim \n")
+			escreva("2_  não \n")
+			leia(opcao)
+			
+			enquanto(opcao != "1" ou opcao != "2"){
+				se(opcao == "1" ou opcao == "2"){
+					opcaoInt = t.cadeia_para_inteiro(opcao, 10)
+				pare
+				}
+				senao{
+					escreva("Valor informado está errado!\n")
+				}
+			}
+			
+			
+			escolha(opcaoInt){
+				caso 1:
+					se(quantidade <= y){
+						limpa()
+						y = y - quantidade
+						energia = energia + (quantidade * x)
+						y = y - quantidade
+						escreva("Consumo realizado com sucesso!\n")
+						u.aguarde(2000)
+					}
+					senao{
+						limpa()
+						escreva("Consumo negada\n")
+						u.aguarde(2000)
+					}
+					pare
+				caso 2:
+					limpa()
+					escreva("Consumo negado\n")
 					u.aguarde(2000)
 					}//fim escolha compra
 		
