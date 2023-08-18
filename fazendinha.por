@@ -17,6 +17,8 @@ programa
 
      //Animais e preços
 	inteiro vaca = 2
+	inteiro bebe_vaca = 0
+	inteiro time_bebe_vaca = 5 
      real valor_vaca = 1900.0
      real racao_vaca = 1.0
      inteiro touro = 0
@@ -26,6 +28,8 @@ programa
      real valor_jegue = 0.0
      real racao_jegue = 1.0
      inteiro jumenta = 0
+     inteiro bebe_jumenta = 0
+	inteiro time_bebe_jumenta = 5 
      real valor_jumenta = 0.0
      real racao_jumenta = 1.0
 
@@ -58,7 +62,10 @@ programa
      real valor__racao_cara = 0.0
 
      //Produção
-     inteiro time_leite = 0
+     inteiro time_leite_vaca = 0
+     inteiro time_leite_jumenta = 0
+     inteiro time_reproducao_touro = 0
+     inteiro time_reproducao_jegue = 0
 	
 	funcao inicio(){
 	    
@@ -101,9 +108,42 @@ programa
 		
 		para(numeroDias = numeroDias; numeroDias <= 100; numeroDias++){
 
-			time_leite = 0
+			time_leite_vaca = 0
+			time_leite_jumenta = 0
+		     time_reproducao_touro = 0
+		     time_reproducao_jegue = 0
 			energia = 100
 			dormir = 0
+
+			se(time_bebe_vaca > 0){
+				time_bebe_vaca--
+			}
+			se(time_bebe_vaca == 0 e bebe_vaca >= 1){
+				para(bebe_vaca; bebe_vaca == 0; bebe_vaca--){
+					quantidade = u.sorteia(1,10)
+					se(quantidade == 1 ou quantidade == 2 ou quantidade == 3 ou quantidade == 4 ou quantidade == 5){
+						vaca++
+					}
+					senao{
+						touro++
+					}
+				} 
+			}
+
+			se(time_bebe_jumenta > 0){
+				time_bebe_jumenta--
+			}
+			se(time_bebe_jumenta == 0 e bebe_jumenta >= 1){
+				para(bebe_jumenta; bebe_jumenta == 0; bebe_jumenta--){
+					quantidade = u.sorteia(1,10)
+					se(quantidade == 1 ou quantidade == 2 ou quantidade == 3 ou quantidade == 4 ou quantidade == 5){
+						jumenta++
+					}
+					senao{
+						jegue++
+					}
+				} 
+			}
 
 			FomeAnimais(racao_vaca)
 			FomeAnimais(racao_touro)
@@ -569,7 +609,7 @@ programa
 				
 				escolha(opcaoInt){
 						caso 1:
-							enquanto(opcao != "1" ou opcao != "2" ou opcao != "3"){
+							enquanto(opcao != "1" ou opcao != "2"){
 								limpa()
 								escreva("************************************************************* \n")
 								escreva("**                                                         ** \n")
@@ -581,12 +621,10 @@ programa
 								escreva("**                                                         ** \n")
 								escreva("**                     2_ Tirar leite                      ** \n")
 								escreva("**                                                         ** \n")
-								escreva("**                       3_ Vacinar                        ** \n")
-								escreva("**                                                         ** \n")
 								escreva("************************************************************* \n")
 								leia(opcao)
 								
-								se(opcao == "1" ou opcao == "2" ou opcao == "3"){
+								se(opcao == "1" ou opcao == "2"){
 									opcaoInt = t.cadeia_para_inteiro(opcao, 10)
 									pare
 								}
@@ -597,12 +635,13 @@ programa
 
 							escolha(opcaoInt){
 								caso 1:
-									
+									AlimentarAnimais(racao_vaca)
 								pare
 								caso 2:
-									se(time_leite <= 0){
+									se(time_leite_vaca <= 0){
 										leite = leite + vaca
-										time_leite++
+										
+										time_leite_vaca++
 										escreva("Leite tirado com sucesso!\n")
 										u.aguarde(2000)
 									}
@@ -611,12 +650,10 @@ programa
 										u.aguarde(2000)
 									}
 								pare
-								caso 3://add
-								pare
 							}// escolha vaca
 						pare
 						caso 2:
-							enquanto(opcao != "1" ou opcao != "2" ou opcao != "3"){
+							enquanto(opcao != "1" ou opcao != "2"){
 								limpa()
 								escreva("************************************************************* \n")
 								escreva("**                                                         ** \n")
@@ -626,14 +663,12 @@ programa
 								escreva("**                                                         ** \n")
 								escreva("**                      1_ Alimentar                       ** \n")
 								escreva("**                                                         ** \n")
-								escreva("**                       2_ Castrar                        ** \n")
-								escreva("**                                                         ** \n")
-								escreva("**                       3_ Vacinar                        ** \n")
+								escreva("**                       2_ Reproduzir                     ** \n")
 								escreva("**                                                         ** \n")
 								escreva("************************************************************* \n")
 								leia(opcao)
 								
-								se(opcao == "1" ou opcao == "2" ou opcao == "3"){
+								se(opcao == "1" ou opcao == "2"){
 									opcaoInt = t.cadeia_para_inteiro(opcao, 10)
 									pare
 								}
@@ -643,15 +678,15 @@ programa
 							}
 							escolha(opcaoInt){
 								caso 1:
+									AlimentarAnimais(racao_touro)
 								pare
 								caso 2:
-								pare
-								caso 3:
+									ReproduzirAnimais(vaca, touro, bebe_vaca, racao_touro, time_reproducao_touro, time_bebe_vaca)
 								pare
 							}//escolha touro
 						pare
 						caso 3:
-							enquanto(opcao != "1" ou opcao != "2" ou opcao != "3"){
+							enquanto(opcao != "1" ou opcao != "2"){
 								limpa()
 								escreva("************************************************************* \n")
 								escreva("**                                                         ** \n")
@@ -661,14 +696,12 @@ programa
 								escreva("**                                                         ** \n")
 								escreva("**                      1_ Alimentar                       ** \n")
 								escreva("**                                                         ** \n")
-								escreva("**                        2_ Montar                        ** \n")
-								escreva("**                                                         ** \n")
-								escreva("**                       3_ Vacinar                        ** \n")
+								escreva("**                      2_ Reproduzir                      ** \n")
 								escreva("**                                                         ** \n")
 								escreva("************************************************************* \n")
 								leia(opcao)
 								
-								se(opcao == "1" ou opcao == "2" ou opcao == "3"){
+								se(opcao == "1" ou opcao == "2"){
 									opcaoInt = t.cadeia_para_inteiro(opcao, 10)
 									pare
 								}
@@ -679,11 +712,12 @@ programa
 							
 							escolha(opcaoInt){
 								caso 1:
+									AlimentarAnimais(racao_jegue)
 								pare
 								caso 2:
+									ReproduzirAnimais(jumenta, jegue, bebe_jumenta, racao_jegue, time_reproducao_jegue, time_bebe_jumenta)
 								pare
-								caso 3:
-								pare
+								
 							}//escolha jegue
 						pare
 						caso 4:
@@ -697,16 +731,12 @@ programa
 								escreva("**                                                         ** \n")
 								escreva("**                      1_ Alimentar                       ** \n")
 								escreva("**                                                         ** \n")
-								escreva("**                        2_ Montar                        ** \n")
-								escreva("**                                                         ** \n")
-								escreva("**                     3_ Tirar leite                      ** \n")
-								escreva("**                                                         ** \n")
-								escreva("**                       4_ Vacinar                        ** \n")
+								escreva("**                     2_ Tirar leite                      ** \n")
 								escreva("**                                                         ** \n")
 								escreva("************************************************************* \n")
 								leia(opcao)
 							
-								se(opcao == "1" ou opcao == "2" ou opcao == "3" ou opcao == "4"){
+								se(opcao == "1" ou opcao == "2"){
 									opcaoInt = t.cadeia_para_inteiro(opcao, 10)
 									pare
 								}
@@ -717,12 +747,9 @@ programa
 								
 							escolha(opcaoInt){
 								caso 1:
+									AlimentarAnimais(racao_jumenta)
 								pare
 								caso 2:
-								pare
-								caso 3:
-								pare
-								caso 4:
 								pare
 							}//escolha jumenta
 						pare
@@ -946,7 +973,7 @@ programa
 		
 		}//funcao AbreviarVenda
 
-	funcao AlimentarAnimais(real x, inteiro y){
+	funcao AlimentarAnimais(real x){
 
 			enquanto(opcao != "1" ou opcao != "2" ou opcao != "3"){
 					limpa()
@@ -979,7 +1006,7 @@ programa
 				caso 1:
 					escreva("Quantas desta rações você deseja usar para alimentar este animal?? \n")
 					leia(quantidade)
-					escreva("Reultará em: ", y)
+					escreva("Reultará em: ", racao_cara)
 					escreva("\n Deseja alimentar? \n")
 					escreva("1_  sim \n")
 					escreva("2_  não \n")
@@ -998,9 +1025,9 @@ programa
 					
 					escolha(opcaoInt){
 						caso 1:
-							se(quantidade <= y){
+							se(quantidade <= racao_cara){
 								limpa()
-								y = y - quantidade
+								racao_cara = racao_cara - quantidade
 								energia = energia - (quantidade * 10)
 								x = x + (0.25)
 								escreva("Alimentação realizada com sucesso!\n")
@@ -1021,7 +1048,7 @@ programa
 				caso 2:
 					escreva("Quantas desta rações você deseja usar para alimentar este animal?? \n")
 					leia(quantidade)
-					escreva("Reultará em: ", y)
+					escreva("Reultará em: ", racao_media)
 					escreva("\n Deseja alimentar? \n")
 					escreva("1_  sim \n")
 					escreva("2_  não \n")
@@ -1040,9 +1067,9 @@ programa
 					
 					escolha(opcaoInt){
 						caso 1:
-							se(quantidade <= y){
+							se(quantidade <= racao_media){
 								limpa()
-								y = y - quantidade
+								racao_media = racao_media - quantidade
 								energia = energia - (quantidade * 10)
 								x = x + (0.1)
 								escreva("Alimentação realizada com sucesso!\n")
@@ -1063,7 +1090,7 @@ programa
 				caso 3:
 					escreva("Quantas desta rações você deseja usar para alimentar este animal?? \n")
 					leia(quantidade)
-					escreva("Reultará em: ", y)
+					escreva("Reultará em: ", racao_barata)
 					escreva("\n Deseja alimentar? \n")
 					escreva("1_  sim \n")
 					escreva("2_  não \n")
@@ -1082,9 +1109,9 @@ programa
 					
 					escolha(opcaoInt){
 						caso 1:
-							se(quantidade <= y){
+							se(quantidade <= racao_barata){
 								limpa()
-								y = y - quantidade
+								racao_barata = racao_barata - quantidade
 								energia = energia - (quantidade * 10)
 								x = x + (0.05)
 								escreva("Alimentação realizada com sucesso!\n")
@@ -1110,5 +1137,37 @@ programa
 				y = y - 0.05
 			}
 		}//funcao Fome Animais
+
+	funcao ReproduzirAnimais(inteiro x, inteiro y, inteiro z, real a, inteiro b, inteiro c){
+		
+									se(b == 0 e energia <= 100){
+										enquanto(opcao != "1" ou opcao != "2"){
+											escreva("Quantos animais você deseja reproduzir?")
+											leia(quantidade)
+											se(opcao == "1" ou opcao == "2"){
+												opcaoInt = t.cadeia_para_inteiro(opcao, 10)
+												pare
+											}
+											senao{
+												escreva("Valor informado está errado!\n")
+											}
+										}
+										se(x >= 1 e y >=1){
+	
+											z = u.sorteia(1, x)
+											z = z * quantidade
+											c = c + 5
+											
+											escreva("Reprodução feita com sucesos!!")
+											u.aguarde(2000)
+											escreva("Resultou em ", z, "bebes ")
+										}
+									}senao se(energia <= 100){
+										escreva("Energia Insuficiente")
+									}
+									senao{
+									escreva("Você já reproduziu hoje")
+									}
+	}//funcao Reproduzir Animais
 //programa 
 }
