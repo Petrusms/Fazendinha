@@ -35,7 +35,7 @@ programa
 			branco((coluna * 3) + 7)
 			escreva(" (.)>   (.)>   (.)>   (.)>\n")
 			branco((coluna * 3) + 5)
-			escreva("..\\   )..\\   )..\\   )..\\   ).")
+			escreva("..\\___)..\\___)..\\___)..\\___).")
 		} 
 		senao
 		{
@@ -43,12 +43,16 @@ programa
 			branco(4)
 			escreva("(.)>   (.)>   (.)>   (.)>\n")
 			branco((coluna * 3) + 6)
-			escreva("..\\   )..\\   )..\\   )..\\   ).")
+			escreva("..\\___)..\\___)..\\___)..\\___).")
 		}
 
 		escreva("\n")
 	}
      //pula espaços no inicio
+     
+		//escreva("┌┬┐┬ ┬┬┌┬┐┌─┐ ┌─┐┌┐ ┬─┐┬┌─┐┌─┐┬┐┌─┐ ┌─┐┌─┐┬─┐ ┌┬┐┌─┐┬─┐  ┬┌─┐┌─┐┌─┐┬┐┌─┐\n")  
+         // escreva("││││ ││ │ │ │ │ │├┴┐├┬┘││ ┬├─┤│││ │ ├─┘│ │├┬┘  │ ├┤ ├┬┘  ││ ││ ┬├─┤│││ │\n")
+         // escreva("┴ ┴└─┘┴ ┴ └─┘ └─┘└─┘┴└─┴└─┘┴ ┴┴┘└─┘ ┴  └─┘┴└─  ┴ └─┘┴└─ └┘└─┘└─┘┴ ┴┴┘└─┘")
 	funcao branco(inteiro quantidade)
 	{
 		inteiro brancos = 1
