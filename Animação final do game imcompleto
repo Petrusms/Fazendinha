@@ -30,6 +30,7 @@ programa
      //movimentaçao
 	funcao desenhar_pato(inteiro coluna, inteiro andando)
 	{
+		escreva("\n")
 		se (andando == 0)
 		{
 			branco((coluna * 3) + 7)
@@ -45,8 +46,8 @@ programa
 			branco((coluna * 3) + 6)
 			escreva("..\\___)..\\___)..\\___)..\\___).")
 		}
-
 		escreva("\n")
+		final()
 	}
      //pula espaços no inicio
      
@@ -56,11 +57,15 @@ programa
 	funcao branco(inteiro quantidade)
 	{
 		inteiro brancos = 1
-		
 		enquanto (brancos <= quantidade)
 		{
-			escreva (" ")
+			escreva(" ")
 			brancos++
 		}
+	}
+	funcao final(){
+		escreva(" ┌┬┐┬ ┬┬┌┬┐┌─┐ ┌─┐┌┐ ┬─┐┬┌─┐┌─┐┬┐┌─┐ ┌─┐┌─┐┬─┐ ┌┬┐┌─┐┬─┐  ┬┌─┐┌─┐┌─┐┬┐┌─┐\n")  
+          escreva(" ││││ ││ │ │ │ │ │├┴┐├┬┘││ ┬├─┤│││ │ ├─┘│ │├┬┘  │ ├┤ ├┬┘  ││ ││ ┬├─┤│││ │\n")
+          escreva(" ┴ ┴└─┘┴ ┴ └─┘ └─┘└─┘┴└─┴└─┘┴ ┴┴┘└─┘ ┴  └─┘┴└─  ┴ └─┘┴└─ └┘└─┘└─┘┴ ┴┴┘└─┘")
 	}
 }
