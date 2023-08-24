@@ -5,7 +5,7 @@ programa
 	funcao inicio()
 	{
 		inteiro coluna_inicial = 0
-		inteiro passos = 10
+		inteiro passos = 10//23
 		
 		animar(coluna_inicial, passos)
 	}
@@ -33,28 +33,33 @@ programa
 		escreva("\n")
 		se (andando == 0)
 		{
-			branco((coluna * 3) + 7)
+			branco_coluna_cima((coluna * 3) + 7)
 			escreva(" (.)>   (.)>   (.)>   (.)>\n")
-			branco((coluna * 3) + 5)
+			branco_coluna_baixo((coluna * 3) + 5)
 			escreva("..\\___)..\\___)..\\___)..\\___).")
 		} 
 		senao
 		{
-			branco((coluna * 3) + 6)
-			branco(4)
+			branco_coluna_cima((coluna * 3) + 6)
+			branco_coluna_cima(4)
 			escreva("(.)>   (.)>   (.)>   (.)>\n")
-			branco((coluna * 3) + 6)
+			branco_coluna_baixo((coluna * 3) + 6)
 			escreva("..\\___)..\\___)..\\___)..\\___).")
 		}
 		escreva("\n")
 		final()
 	}
      //pula espaços no inicio
-     
-		//escreva("┌┬┐┬ ┬┬┌┬┐┌─┐ ┌─┐┌┐ ┬─┐┬┌─┐┌─┐┬┐┌─┐ ┌─┐┌─┐┬─┐ ┌┬┐┌─┐┬─┐  ┬┌─┐┌─┐┌─┐┬┐┌─┐\n")  
-         // escreva("││││ ││ │ │ │ │ │├┴┐├┬┘││ ┬├─┤│││ │ ├─┘│ │├┬┘  │ ├┤ ├┬┘  ││ ││ ┬├─┤│││ │\n")
-         // escreva("┴ ┴└─┘┴ ┴ └─┘ └─┘└─┘┴└─┴└─┘┴ ┴┴┘└─┘ ┴  └─┘┴└─  ┴ └─┘┴└─ └┘└─┘└─┘┴ ┴┴┘└─┘")
-	funcao branco(inteiro quantidade)
+	funcao branco_coluna_baixo(inteiro quantidade)
+	{
+		inteiro brancos = 1
+		enquanto (brancos <= quantidade)
+		{
+			escreva(".")
+			brancos++
+		}
+	}
+	funcao branco_coluna_cima(inteiro quantidade)
 	{
 		inteiro brancos = 1
 		enquanto (brancos <= quantidade)
