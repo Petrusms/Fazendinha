@@ -183,6 +183,7 @@ programa
 			}//energia
 										
 		}//para
+		inicio_animacao()
 	
 	} // fim da funcao comercarJogo
 
@@ -739,7 +740,7 @@ programa
 		enquanto(opcao != "1" ou opcao != "2" ou opcao != "3" ou opcao != "4" ou opcao != "5" ou opcao != "6" ou opcao != "7" ou opcao != "8" ou opcao != "9"){
 						escreva("╔═══════════════════════════════════════════════════════════╗ \n")
 						escreva("║                                                           ║ \n")
-						escreva("║             Escolha um alimento para ingerir:             ║ \n")
+						escreva("║               Escolha um algo para ingerir:               ║ \n")
 						escreva("║                                                           ║ \n")
 						escreva("║                   1_ Carne de Gato                        ║ \n")
 						escreva("║                                                           ║ \n")
@@ -1114,5 +1115,77 @@ programa
 				y = y - 0.05
 			}
 		}//funcao Fome Animais
+		
+	funcao inicio_animacao()
+	{
+		inteiro coluna_inicial = 0
+		inteiro passos = 10//23
+		
+		animar(coluna_inicial, passos)
+	}
+     
+	funcao animar(inteiro coluna_inicial, inteiro passos)
+	{
+		inteiro coluna_final = coluna_inicial + passos
+		
+		para (inteiro coluna = coluna_inicial; coluna < coluna_final; coluna++)
+		{
+			para (inteiro andando = 0; andando <= 1; andando++)
+			{
+				limpa()
+				desenhar_pato(coluna, andando)
+				u.aguarde(500)
+			}
+		}
+
+		limpa()
+		desenhar_pato(coluna_final, 0)
+	}
+     //movimentaçao
+	funcao desenhar_pato(inteiro coluna, inteiro andando)
+	{
+		escreva("\n")
+		se (andando == 0)
+		{
+			branco_coluna_cima((coluna * 3) + 7)
+			escreva(" (.)>   (.)>   (.)>   (.)>\n")
+			branco_coluna_baixo((coluna * 3) + 5)
+			escreva("..\\___)..\\___)..\\___)..\\___).")
+		} 
+		senao
+		{
+			branco_coluna_cima((coluna * 3) + 6)
+			branco_coluna_cima(4)
+			escreva("(.)>   (.)>   (.)>   (.)>\n")
+			branco_coluna_baixo((coluna * 3) + 6)
+			escreva("..\\___)..\\___)..\\___)..\\___).")
+		}
+		escreva("\n")
+		final()
+	}
+     //pula espaços no inicio
+	funcao branco_coluna_baixo(inteiro quant)
+	{
+		inteiro brancos = 1
+		enquanto (brancos <= quant)
+		{
+			escreva(".")
+			brancos++
+		}
+	}
+	funcao branco_coluna_cima(inteiro quant)
+	{
+		inteiro brancos = 1
+		enquanto (brancos <= quant)
+		{
+			escreva(" ")
+			brancos++
+		}
+	}
+	funcao final(){
+		escreva(" ┌┬┐┬ ┬┬┌┬┐┌─┐ ┌─┐┌┐ ┬─┐┬┌─┐┌─┐┬┐┌─┐ ┌─┐┌─┐┬─┐ ┌┬┐┌─┐┬─┐  ┬┌─┐┌─┐┌─┐┬┐┌─┐\n")  
+          escreva(" ││││ ││ │ │ │ │ │├┴┐├┬┘││ ┬├─┤│││ │ ├─┘│ │├┬┘  │ ├┤ ├┬┘  ││ ││ ┬├─┤│││ │\n")
+          escreva(" ┴ ┴└─┘┴ ┴ └─┘ └─┘└─┘┴└─┴└─┘┴ ┴┴┘└─┘ ┴  └─┘┴└─  ┴ └─┘┴└─ └┘└─┘└─┘┴ ┴┴┘└─┘")
+	}
 //programa 
 }
