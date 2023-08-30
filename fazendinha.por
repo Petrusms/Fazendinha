@@ -16,7 +16,7 @@ programa
 					
 
      //Animais e preços
-	inteiro vaca = 2
+     inteiro vaca = 2
      real valor_vaca = 1900.0
      real racao_vaca = 1.0
      inteiro touro = 0
