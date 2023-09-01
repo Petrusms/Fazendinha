@@ -114,7 +114,7 @@ programa
 			comercarJogo()
 			pare
 			caso  2:
-			escreva("Obrigado por não ter jogado")
+			animacao2()
 			pare
 		}//escolha
 		
@@ -1270,10 +1270,81 @@ programa
 			}
 		}//funcao Fome Animais
 		
+	funcao animacao2()
+	{
+		inteiro coluna_inicial = 0
+		inteiro passos = 16
+		
+		animar2(coluna_inicial, passos)
+	}
+     
+	funcao animar2(inteiro coluna_inicial, inteiro passos)
+	{
+		inteiro coluna_final = coluna_inicial + passos
+		
+		para (inteiro coluna = coluna_inicial; coluna < coluna_final; coluna++)
+		{
+			para (inteiro andando = 0; andando <= 1; andando++)
+			{
+				limpa()
+				desenhar_pato2(coluna, andando)
+				u.aguarde(500)
+			}
+		}
+
+		limpa()
+		desenhar_pato2(coluna_final, 0)
+	}//movimentaçao
+	
+	funcao desenhar_pato2(inteiro coluna, inteiro andando)
+	{
+		escreva("\n")
+		se (andando == 0)
+		{
+			branco_coluna_cima2((coluna * 3) + 7)
+			escreva(" (.)>   (.)>   (.)>   (.)>\n")
+			branco_coluna_baixo2((coluna * 3) + 5)
+			escreva("..\\___)..\\___)..\\___)..\\___).")
+		} 
+		senao
+		{
+			branco_coluna_cima2((coluna * 3) + 6)
+			branco_coluna_cima2(4)
+			escreva("(.)>   (.)>   (.)>   (.)>\n")
+			branco_coluna_baixo2((coluna * 3) + 6)
+			escreva("..\\___)..\\___)..\\___)..\\___).")
+		}
+		escreva("\n")
+		escreva(" ┌┬┐┬ ┬┬┌┬┐┌─┐ ┌─┐┌┐ ┬─┐┬┌─┐┌─┐┬┐┌─┐ ┌─┐┌─┐┬─┐ ┌┐┌ ┌─┐ ┌─┐ ┌┬┐┌─┐┬─┐  ┬┌─┐┌─┐┌─┐┬┐┌─┐\n")  
+          escreva(" ││││ ││ │ │ │ │ │├┴┐├┬┘││ ┬├─┤│││ │ ├─┘│ │├┬┘ │││ ├─┤ │ │  │ ├┤ ├┬┘  ││ ││ ┬├─┤│││ │\n")
+          escreva(" ┴ ┴└─┘┴ ┴ └─┘ └─┘└─┘┴└─┴└─┘┴ ┴┴┘└─┘ ┴  └─┘┴└─ ┘└┘ ┴ ┴ └─┘  ┴ └─┘┴└─ └┘└─┘└─┘┴ ┴┴┘└─┘")
+	}//pula espaços no inicio
+	
+	funcao branco_coluna_baixo2(inteiro quant)
+	
+	{
+		inteiro brancos = 1
+		enquanto (brancos <= quant)
+		{
+			escreva(".")
+			brancos++
+		}
+	}
+	
+	funcao branco_coluna_cima2(inteiro quant)
+	{
+		inteiro brancos = 1
+		enquanto (brancos <= quant)
+		{
+			escreva(" ")
+			brancos++
+		}
+	}
+	
 	funcao inicio_animacao()
 	{
 		inteiro coluna_inicial = 0
-		inteiro passos = 10//23
+		inteiro passos = 10
 		
 		animar(coluna_inicial, passos)
 	}
