@@ -123,7 +123,7 @@ programa
 
 	funcao comercarJogo(){
 		
-		para(numeroDias = numeroDias; numeroDias <= 100; numeroDias++){
+		para(numeroDias = numeroDias; numeroDias < 100; numeroDias++){
 
 			time_leite_jumenta = 0
 			time_leite_vaca = 0
@@ -193,9 +193,17 @@ programa
  			mercado_inicio()
 										
 		}//para
-		
+		se(dinheiro<500){
+			escreva("Você morreu pobre")
+		}
+		senao se(dinheiro<1000){
+			escreva("Você morreu mas teve uma vida médiana")
+		}
+		senao se(dinheiro>10000){
+			escreva("Você teve uma vida de luxo")
+		}
+		u.aguarde(3000)
 		inicio_animacao()
-		
 	} // fim da funcao comercarJogo
 	funcao mercado_inicio(){
 		enquanto(energia > 0 e dormir == 0){
