@@ -199,7 +199,7 @@ programa
 		senao se(dinheiro<1000){
 			escreva("Você morreu mas teve uma vida médiana")
 		}
-		senao se(dinheiro>10000){
+		senao se(dinheiro>=10000){
 			escreva("Você teve uma vida de luxo")
 		}
 		u.aguarde(3000)
