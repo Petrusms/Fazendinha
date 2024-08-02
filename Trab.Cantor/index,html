@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taxad e Baitaxa | Site Oficial</title>
+
+</head>
+
+<body>
+
+    <main>
+        <section>
+            <img src="" >
+            <h1>Taxad e Baitaxa</h1>
+        </section>
+        <hr>
+        <section>
+            <div>
+                <h1>Biografia Taxad</h1>
+                <a href="./biografia.html">Biografia em detalhes</a>
+            </div>
+            <div>
+                <h1>Biografia Baitaxa</h1>
+                <a href="./biografia2.html">Biografia em detalhes</a>
+            </div>
+        </section>
+        <hr>
+        <section>
+            <h1>Discografia</h1>
+            <img src="" alt="">
+        </section>
+        <section>
+            <h2>Redes Socias</h2>
+            <img src="" alt="">
+            <a href=""></a>
+        </section>
+        <section>
+            <h2>Contato para shows</h2>
+            <img src="" alt="">
+            <a href=""></a>
+        </section>
+    </main>
+</body>
+</html>
