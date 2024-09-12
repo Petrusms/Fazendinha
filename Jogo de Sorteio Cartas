@@ -1,0 +1,127 @@
+<?php
+class Carta{
+
+    private int $numero;
+    private string $nome;
+
+    /**
+     * Get the value of numero
+     */
+    public function getNumero(): int
+    {
+        return $this->numero;
+    }
+
+    /**
+     * Set the value of numero
+     */
+    public function setNumero(int $numero): self
+    {
+        $this->numero = $numero;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of nome
+     */
+    public function getNome(): string
+    {
+        return $this->nome;
+    }
+
+    /**
+     * Set the value of nome
+     */
+    public function setNome(string $nome): self
+    {
+        $this->nome = $nome;
+
+        return $this;
+    }
+}
+
+$baralho = [];
+
+$baralhoPoker = [
+    "Paus" => array("Ás", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Valete", "Dama", "Rei"),
+    "Ouros" => array("Ás", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Valete", "Dama", "Rei"),
+    "Copas" => array("Ás", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Valete", "Dama", "Rei"),
+    "Espadas" => array("Ás", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Valete", "Dama", "Rei")
+];
+
+$baralhoEspanhol = [
+    "Ouros" => array("1", "2", "3", "4", "5", "6", "7", "10", "11", "12"),
+    "Copas" => array("1", "2", "3", "4", "5", "6", "7", "10", "11", "12"),
+    "Espadas" => array("1", "2", "3", "4", "5", "6", "7", "10", "11", "12"),
+    "Paus" => array("1", "2", "3", "4", "5", "6", "7", "10", "11", "12")
+];
+
+$baralhoPoke = [
+    "Água" => array("1: Squirtle","2: Psyduck","3: Gyarados","4: Lapras","5: Greninja"),
+    "Fogo" => array("1: Charmander","2: Vulpix","3: Arcanine","4: Charizard","5: Incineroar"),
+    "Planta" => array("1: Bulbasaur","2: Oddish","3: Exeggutor","4: Torterra","5: Rillaboom"),
+    "Elétrico" => array("1: Pikachu","2: Raichu","3: Jolteon","4: Ampharos","5: Zeraora"),
+    "Lutador" => array("1: Machop","2: Hitmonlee","3: Lucario","4: Conkeldurr","5: Incineroar"),
+    "Fantasma" => array("1: Gastly","2: Gengar","3: Mismagius","4: Chandelure","5: Sableye"),
+    "Dragão" => array("1: Dratini","2: Dragonair","3: Dragonite","4: Rayquaza","5: Garchomp")
+];
+
+$baralhoFrances = [
+    "Paus" => array("Ás", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Valete", "Dama", "Rei"),
+    "Ouros" => array("Ás", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Valete", "Dama", "Rei"),
+    "Copas" => array("Ás", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Valete", "Dama", "Rei"),
+    "Espadas" => array("Ás", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Valete", "Dama", "Rei")
+];
+
+while(true){
+
+    print("╔══════════════Menu═════════════╗\n");
+    print("║      O que deseja fazer?      ║\n");
+    print("║ 1: Baralho convencional(poker)║\n");
+    print("║ 2: Baralho Espanhol           ║\n");
+    print("║ 3: Baralho Francês            ║\n");
+    print("║ 4: Baralho Pokemón            ║\n");
+    print("║ 5: Criar seu proprio baralho  ║\n");
+    print("║ 0: Encerrar o pragrama        ║\n");
+    print("╚═══════════════════════════════╝\n");
+
+    $opcao=readline("");
+
+    switch($opcao){
+
+        case 1:
+            $baralhoPoker = $baralhoPoker[array_rand($array)];
+        break;
+
+        case 2:
+            $baralhoEspanhol = $baralhoEspanhol[array_rand($array)];
+        break;
+
+        case 3:
+            $baralhoFrances = $baralhoFrances[array_rand($array)];
+        break;
+
+        case 4:
+            $baralhoPoke = $baralhoPoke[array_rand($array)];
+        break;
+
+        case 5:
+            for($i=0; $i<=7; $i++){
+                $cartas = new Carta();
+                $cartas->setNome(readline("Coloque o nome da carta: "))->setNumero("Qual o número de sua carta: ");
+                $baralho[] = $cartas;
+            }
+            $elementoDoArray = $array[array_rand($array)];
+        break;
+
+        case 0:
+            print("Programa encerrado...\n");
+            return true;
+
+        default:
+            print("Opção invalida!\n");
+    }
+}
+
+?>
