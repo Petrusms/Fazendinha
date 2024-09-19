@@ -24,7 +24,7 @@ class Carta
     }
 
     /**
-     * Get the value of nome
+     * Get the value of nome pms
      */
     public function getNome(): string
     {
