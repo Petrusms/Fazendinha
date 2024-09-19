@@ -1,13 +1,14 @@
 <?php
-class Carta{
+class Carta
+{
 
-    private int $numero;
+    private $numero;
     private string $nome;
 
     /**
      * Get the value of numero
      */
-    public function getNumero(): int
+    public function getNumero()
     {
         return $this->numero;
     }
@@ -15,7 +16,7 @@ class Carta{
     /**
      * Set the value of numero
      */
-    public function setNumero(int $numero): self
+    public function setNumero($numero): self
     {
         $this->numero = $numero;
 
@@ -41,7 +42,28 @@ class Carta{
     }
 }
 
-$baralho = [];
+function geradorEscolhe($baralho, $cartas) {
+    $chave = array_rand($baralho);
+    $cartas->setNome($chave);
+
+    $valores = $baralho[$chave];
+    $numSorteado = $valores[array_rand($valores)];
+    $cartas->setNumero($numSorteado);
+    
+    return [$chave => $numSorteado];
+}
+
+function sortearCarta($baralho) {
+    $cartaAleatoria = $baralho[array_rand($baralho)];
+    $cartaEscolhida = new Carta();
+    
+    foreach ($cartaAleatoria as $naipe => $numero) {
+        $cartaEscolhida->setNome($naipe);
+        $cartaEscolhida->setNumero($numero);
+    }
+    
+    return $cartaEscolhida;
+}
 
 $baralhoPoker = [
     "Paus" => array("Ás", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Valete", "Dama", "Rei"),
@@ -58,13 +80,13 @@ $baralhoEspanhol = [
 ];
 
 $baralhoPoke = [
-    "Água" => array("1: Squirtle","2: Psyduck","3: Gyarados","4: Lapras","5: Greninja"),
-    "Fogo" => array("1: Charmander","2: Vulpix","3: Arcanine","4: Charizard","5: Incineroar"),
-    "Planta" => array("1: Bulbasaur","2: Oddish","3: Exeggutor","4: Torterra","5: Rillaboom"),
-    "Elétrico" => array("1: Pikachu","2: Raichu","3: Jolteon","4: Ampharos","5: Zeraora"),
-    "Lutador" => array("1: Machop","2: Hitmonlee","3: Lucario","4: Conkeldurr","5: Incineroar"),
-    "Fantasma" => array("1: Gastly","2: Gengar","3: Mismagius","4: Chandelure","5: Sableye"),
-    "Dragão" => array("1: Dratini","2: Dragonair","3: Dragonite","4: Rayquaza","5: Garchomp")
+    "Água" => array("1: Squirtle", "2: Psyduck", "3: Gyarados", "4: Lapras", "5: Greninja"),
+    "Fogo" => array("1: Charmander", "2: Vulpix", "3: Arcanine", "4: Charizard", "5: Incineroar"),
+    "Planta" => array("1: Bulbasaur", "2: Oddish", "3: Exeggutor", "4: Torterra", "5: Rillaboom"),
+    "Elétrico" => array("1: Pikachu", "2: Raichu", "3: Jolteon", "4: Ampharos", "5: Zeraora"),
+    "Lutador" => array("1: Machop", "2: Hitmonlee", "3: Lucario", "4: Conkeldurr", "5: Incineroar"),
+    "Fantasma" => array("1: Gastly", "2: Gengar", "3: Mismagius", "4: Chandelure", "5: Sableye"),
+    "Dragão" => array("1: Dratini", "2: Dragonair", "3: Dragonite", "4: Rayquaza", "5: Garchomp")
 ];
 
 $baralhoFrances = [
@@ -74,7 +96,7 @@ $baralhoFrances = [
     "Espadas" => array("Ás", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Valete", "Dama", "Rei")
 ];
 
-while(true){
+while (true) {
 
     print("╔══════════════Menu═════════════╗\n");
     print("║      O que deseja fazer?      ║\n");
@@ -86,42 +108,104 @@ while(true){
     print("║ 0: Encerrar o pragrama        ║\n");
     print("╚═══════════════════════════════╝\n");
 
-    $opcao=readline("");
+    $opcao = readline("");
 
-    switch($opcao){
+    switch ($opcao) {
 
         case 1:
-            $baralhoPoker = $baralhoPoker[array_rand($array)];
-        break;
+            $baralho = [];
+            $cartaEscolhida = [];
+
+            $cartas = new Carta();
+            for($i=0; $i<7; $i++){
+                $cards = geradorEscolhe($baralhoPoker, $cartas);
+                array_push($baralho, $cards);
+                $naipe = $cartas->getNome(); 
+                $numero = $cartas->getNumero(); 
+                print("$naipe: $numero\n");
+                
+                $index = array_search($numero, $baralho[$naipe]); Arrumar aquiiiiiiiiiiiiiiiiiiiiiiii
+    
+                if ($index !== false) {
+                    array_splice($baralho[$chave], $index, 1);
+                }
+            }
+
+            $cartaEscolhida = sortearCarta($baralho);
+            $naipe = $cartaEscolhida->getNome();
+            $numero = $cartaEscolhida->getNumero();
+
+                $jogoAtivo = true;
+                while ($jogoAtivo) {
+                    print("╔═══════════════════Menu══════════════════╗\n");
+                    print("║            O que deseja fazer?          ║\n");
+                    print("║ 1: Escolher uma das cartas mostradas    ║\n");
+                    print("║ 2: desistir                             ║\n");
+                    print("╚═════════════════════════════════════════╝\n");
+    
+                    $opcao = readline("");
+    
+                    switch ($opcao) {
+                        case 1:
+                            $naipeChave = readline("Qual era o naipe da carta?(Paus, Ouros, Copas ou Espadas)\n");
+                            $valor = readline("Qual foi o valor da carta?\n");
+    
+                            if ($naipeChave === $naipe && $valor === $numero) {
+                                print("Parabéns por ter acertado!!!\n");
+                                $jogoAtivo = false;
+                                break;
+                            } else {
+                                foreach ($baralho as $index => $carta) {
+                                    foreach ($carta as $naipeAtual => $numeroAtual) {
+                                        if ($naipeAtual === $naipeChave && $numeroAtual === $valor) {
+                                            array_splice($baralho, $index, 1);
+                                            break;
+                                        }
+                                    }
+                                }
+                                print("Infelizmente você errou ;(\n");
+                                print("Talvez na próxima\n\n");
+
+                                foreach ($baralho as $carta) {
+                                    foreach ($carta as $naipe => $valor) {
+                                        print($naipe . ": " . $valor . "\n");
+                                    }
+                                }
+                            }
+                            break;
+    
+                        case 2:
+                            print("Que pena;(\n");
+                            print("A carta era: ". $cartaEscolhida->getNome() ." : " . $cartaEscolhida->getNumero() . "\n");
+                            $jogoAtivo = false;
+                            break;
+    
+                        default:
+                            print("Opção inválida!\n");
+                    }
+                }
+                break;
 
         case 2:
-            $baralhoEspanhol = $baralhoEspanhol[array_rand($array)];
-        break;
-
+            
         case 3:
-            $baralhoFrances = $baralhoFrances[array_rand($array)];
-        break;
-
+        
         case 4:
-            $baralhoPoke = $baralhoPoke[array_rand($array)];
-        break;
-
+           
         case 5:
-            for($i=0; $i<=7; $i++){
-                $cartas = new Carta();
+            $cartas = new Carta();
+            print("Você terá que irformar 7 cartas, uma por vez para poder jogar.\n");
+            for ($i = 0; $i <= 7; $i++) {
                 $cartas->setNome(readline("Coloque o nome da carta: "))->setNumero("Qual o número de sua carta: ");
                 $baralho[] = $cartas;
             }
-            $elementoDoArray = $array[array_rand($array)];
-        break;
+            break;
 
         case 0:
-            print("Programa encerrado...\n");
+            print("Obrigado por jogar...\n");
             return true;
 
         default:
             print("Opção invalida!\n");
     }
 }
-
-?>
