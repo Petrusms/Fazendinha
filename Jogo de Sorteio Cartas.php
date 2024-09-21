@@ -24,7 +24,7 @@ class Carta
     }
 
     /**
-     * Get the value of nome pms
+     * Get the value of nome
      */
     public function getNome(): string
     {
@@ -117,23 +117,30 @@ while (true) {
             $cartaEscolhida = [];
 
             $cartas = new Carta();
-            for($i=0; $i<7; $i++){
+
+            $quantidade = readline("Quantas cartas deseja tentar a sorte?\n");
+            for($i=0; $i<$quantidade; $i++){
                 $cards = geradorEscolhe($baralhoPoker, $cartas);
                 array_push($baralho, $cards);
                 $naipe = $cartas->getNome(); 
                 $numero = $cartas->getNumero(); 
                 print("$naipe: $numero\n");
                 
-                $index = array_search($numero, $baralho[$naipe]); Arrumar aquiiiiiiiiiiiiiiiiiiiiiiii
-    
+                $index = array_search($numero, $baralhoPoker[$naipe]);
                 if ($index !== false) {
-                    array_splice($baralho[$chave], $index, 1);
+                    array_splice($baralhoPoker[$naipe], $index, 1);
+                    
+                    if (count($baralhoPoker[$naipe]) == 0) {
+                        array_splice($baralhoPoker, array_search($naipe, array_keys($baralhoPoker)), 1);
+                    }
                 }
             }
 
             $cartaEscolhida = sortearCarta($baralho);
             $naipe = $cartaEscolhida->getNome();
             $numero = $cartaEscolhida->getNumero();
+            print($naipe = $cartaEscolhida->getNome().
+            $numero = $cartaEscolhida->getNumero());
 
                 $jogoAtivo = true;
                 while ($jogoAtivo) {
@@ -163,7 +170,7 @@ while (true) {
                                         }
                                     }
                                 }
-                                print("Infelizmente você errou ;(\n");
+                                print("Infelizmente você errou ou digitou a carta errada ;(\n");
                                 print("Talvez na próxima\n\n");
 
                                 foreach ($baralho as $carta) {
