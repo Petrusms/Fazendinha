@@ -42,27 +42,31 @@ class Carta
     }
 }
 
-function geradorEscolhe($baralho, $cartas) {
+function geradorCarta($baralho) {
+    $carta = new Carta();
+    
     $chave = array_rand($baralho);
-    $cartas->setNome($chave);
+    $carta->setNome($chave);
 
     $valores = $baralho[$chave];
     $numSorteado = $valores[array_rand($valores)];
-    $cartas->setNumero($numSorteado);
+    $carta->setNumero($numSorteado);
     
-    return [$chave => $numSorteado];
+    return $carta;
 }
 
 function sortearCarta($baralho) {
     $cartaAleatoria = $baralho[array_rand($baralho)];
-    $cartaEscolhida = new Carta();
     
-    foreach ($cartaAleatoria as $naipe => $numero) {
-        $cartaEscolhida->setNome($naipe);
-        $cartaEscolhida->setNumero($numero);
-    }
-    
-    return $cartaEscolhida;
+    return $cartaAleatoria;
+}
+
+function retornarNaipes($baralho) {
+    $naipes = array();
+    foreach($baralho as $naipe => $carta)
+        array_push($naipes, $naipe);
+
+    return $naipes;
 }
 
 $baralhoPoker = [
@@ -96,6 +100,9 @@ $baralhoFrances = [
     "Espadas" => array("Ás", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Valete", "Dama", "Rei")
 ];
 
+$cartaEscolhida = null;
+$naipes = [];
+
 while (true) {
 
     print("╔══════════════Menu═════════════╗\n");
@@ -114,16 +121,13 @@ while (true) {
 
         case 1:
             $baralho = [];
-            $cartaEscolhida = [];
-
-            $cartas = new Carta();
 
             $quantidade = readline("Quantas cartas deseja tentar a sorte?\n");
             for($i=0; $i<$quantidade; $i++){
-                $cards = geradorEscolhe($baralhoPoker, $cartas);
-                array_push($baralho, $cards);
-                $naipe = $cartas->getNome(); 
-                $numero = $cartas->getNumero(); 
+                $card = geradorCarta($baralhoPoker);
+                array_push($baralho, $card);
+                $naipe = $card->getNome(); 
+                $numero = $card->getNumero(); 
                 print("$naipe: $numero\n");
                 
                 $index = array_search($numero, $baralhoPoker[$naipe]);
@@ -137,8 +141,10 @@ while (true) {
             }
 
             $cartaEscolhida = sortearCarta($baralho);
-            $naipe = $cartaEscolhida->getNome();
-            $numero = $cartaEscolhida->getNumero();
+
+            $naipes = retornarNaipes($baralhoPoker);
+
+            //Só pra conferir se ta funcionando
             print($naipe = $cartaEscolhida->getNome().
             $numero = $cartaEscolhida->getNumero());
 
@@ -157,7 +163,7 @@ while (true) {
                             $naipeChave = readline("Qual era o naipe da carta?(Paus, Ouros, Copas ou Espadas)\n");
                             $valor = readline("Qual foi o valor da carta?\n");
     
-                            if ($naipeChave === $naipe && $valor === $numero) {
+                            if ($cartaEscolhida->getNome() === $naipeChave && $cartaEscolhida->getNumero() === $valor) {
                                 print("Parabéns por ter acertado!!!\n");
                                 $jogoAtivo = false;
                                 break;
